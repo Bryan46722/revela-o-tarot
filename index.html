@@ -1649,27 +1649,29 @@
             }
             
             // Botão de pagamento com redirecionamento direto para Cakto
-            const paymentBtn = document.getElementById('payment-btn');
-            if (paymentBtn) {
-                paymentBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Disparar evento do Meta Pixel para "Compra"
-                    if (typeof fbq !== 'undefined') {
-                        fbq('track', 'Purchase', {
-                            content_name: 'Leitura Premium de Tarot',
-                            value: 14.90,
-                            currency: 'BRL'
-                        });
-                    }
-                    
-                    // Salvar escolhas do usuário antes de redirecionar
-                    saveUserChoices();
-                    
-                    // Redirecionar diretamente para o checkout da Cakto
-                    window.location.href = 'https://pay.cakto.com.br/ubs8ik4_397207';
-                });
-            }
+ // Botão de pagamento com redirecionamento direto para Cakto
+const paymentBtn = document.getElementById('payment-btn');
+if (paymentBtn) {
+    paymentBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // ✅ Disparar somente o evento de INICIALIZAÇÃO DE CHECKOUT
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'InitiateCheckout', {
+                content_name: 'Leitura Premium de Tarot',
+                value: 14.90,
+                currency: 'BRL'
+            });
+        }
+
+        // Salvar escolhas do usuário antes de redirecionar
+        saveUserChoices();
+
+        // Redirecionar diretamente para o checkout da Cakto
+        window.location.href = 'https://pay.cakto.com.br/ubs8ik4_397207';
+    });
+}
+
             
             // Função para animar a tela de carregamento mística
             function animateMysticLoading() {
