@@ -1906,6 +1906,10 @@
                     // Se estamos entrando na etapa 11, iniciar a animação mística
                     if (currentStep === 11) {
                         animateMysticLoading();
+                        // Configurar o botão após um pequeno delay
+                        setTimeout(() => {
+                            setupContinueToReadingButton();
+                        }, 500);
                     }
                     
                     // Configurações específicas da etapa 12
