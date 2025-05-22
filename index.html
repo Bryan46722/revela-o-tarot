@@ -972,23 +972,6 @@
                 
                 <div class="hidden-message" id="message2">Você não está aqui por acaso...</div>
             </div>
-            <!-- Etapa 2 - Antiga etapa 1 -->
-            <div class="step" id="step2">
-                <h1>🔮 Preparação Espiritual</h1>
-                <p>Antes de começarmos, feche os olhos por 5 segundos. Respire fundo.</p>
-                <p>Sinta: existe algo que precisa ser revelado a você hoje?</p>
-                
-                <div class="option-group">
-                    <div class="option" data-value="option1">Sim, algo está me incomodando há dias</div>
-                    <div class="option" data-value="option2">Tenho dúvidas que não consigo responder sozinho(a)</div>
-                    <div class="option" data-value="option3">Sinto que o universo quer me dizer algo</div>
-                    <div class="option" data-value="option4">Não sei explicar... mas algo precisa mudar</div>
-                </div>
-                
-                <a href="#" class="btn next-btn">Prosseguir</a>
-                
-                <div class="hidden-message" id="message2">Você não está aqui por acaso...</div>
-            </div>
             
             <!-- Etapa 3 -->
             <div class="step" id="step3">
@@ -1296,7 +1279,7 @@
                 localStorage.setItem('tarotUserChoices', JSON.stringify(userChoices));
             }
             
-            // CONTADOR DE TEMPO - começa a contar apenas quando a etapa 11 estiver visível
+            // CONTADOR DE TEMPO - começa a contar apenas quando a etapa 12 estiver visível
             function iniciarContador() {
                 var contadorEl = document.getElementById('countdown-timer');
                 if (!contadorEl) return;
@@ -1336,9 +1319,9 @@
             
             // VERIFICAR QUAL ETAPA ESTÁ ATIVA
             function verificarEtapaAtiva() {
-                // Verificar se a etapa 11 está visível
-                var etapa11 = document.getElementById('step11');
-                if (etapa11 && etapa11.classList.contains('active')) {
+                // Verificar se a etapa 12 está visível
+                var etapa12 = document.getElementById('step12');
+                if (etapa12 && etapa12.classList.contains('active')) {
                     // Iniciar contador se não estiver iniciado
                     if (!window.contadorIniciado) {
                         iniciarContador();
@@ -1394,12 +1377,12 @@
             // Array para rastrear frases já usadas
             var frasesUsadas = [];
             
-            // INICIAR NOTIFICAÇÕES - só é chamada quando a etapa 11 estiver ativa
+            // INICIAR NOTIFICAÇÕES - só é chamada quando a etapa 12 estiver ativa
             function iniciarNotificacoes() {
-                // Verificar se estamos na etapa 11
-                var etapa11 = document.getElementById('step11');
-                if (!etapa11 || !etapa11.classList.contains('active')) {
-                    return; // Não mostrar notificações se não estiver na etapa 11
+                // Verificar se estamos na etapa 12
+                var etapa12 = document.getElementById('step12');
+                if (!etapa12 || !etapa12.classList.contains('active')) {
+                    return; // Não mostrar notificações se não estiver na etapa 12
                 }
                 
                 // Função para pegar uma frase não usada
@@ -1427,8 +1410,8 @@
                 
                 // Função para mostrar uma notificação
                 function mostrarNotificacao() {
-                    // Verificar novamente se ainda estamos na etapa 11
-                    if (!document.getElementById('step11') || !document.getElementById('step11').classList.contains('active')) {
+                    // Verificar novamente se ainda estamos na etapa 12
+                    if (!document.getElementById('step12') || !document.getElementById('step12').classList.contains('active')) {
                         return;
                     }
                     
@@ -1470,10 +1453,10 @@
                 // Mostrar primeira notificação
                 mostrarNotificacao();
                 
-                // Continuar mostrando a cada 10 segundos, verificando sempre se ainda estamos na etapa 11
+                // Continuar mostrando a cada 10 segundos, verificando sempre se ainda estamos na etapa 12
                 var notifInterval = setInterval(function() {
-                    if (!document.getElementById('step11') || !document.getElementById('step11').classList.contains('active')) {
-                        clearInterval(notifInterval); // Parar de mostrar notificações se não estiver mais na etapa 11
+                    if (!document.getElementById('step12') || !document.getElementById('step12').classList.contains('active')) {
+                        clearInterval(notifInterval); // Parar de mostrar notificações se não estiver mais na etapa 12
                         return;
                     }
                     mostrarNotificacao();
@@ -1493,7 +1476,7 @@
                 if (message1) message1.classList.add('show');
             }, 3000);
             
-            // Inicializar as cartas de tarot quando chegar à etapa 9
+            // Inicializar as cartas de tarot quando chegar à etapa 10
             function initTarotCards() {
                 const tarotCardsContainer = document.querySelector('.tarot-cards');
                 if (!tarotCardsContainer) return;
@@ -1570,7 +1553,7 @@
                 }
                 
                 // Habilitar/desabilitar o botão baseado no número de cartas selecionadas
-                const nextBtn = document.querySelector('#step9 .next-btn');
+                const nextBtn = document.querySelector('#step10 .next-btn');
                 if (nextBtn) {
                     if (userChoices.selectedCards.length === 3) {
                         nextBtn.removeAttribute('disabled');
@@ -1661,99 +1644,6 @@
                 });
             }
             
-            // Função para redirecionar para a Cakto
-            function redirectToCakto(params) {
-                // Aqui você usará os dados da sua conta Cakto
-                // Isto é um exemplo - você precisará substituir com seus dados reais
-                const CAKTO_MERCHANT_ID = 'SEU_ID_DE_COMERCIANTE';
-                
-                // Construir a URL de redirecionamento para a Cakto
-                const caktoUrl = `https://pay.cakto.com.br/checkout?` +
-                    `merchant_id=${CAKTO_MERCHANT_ID}` +
-                    `&amount=${params.amount}` +
-                    `&description=${encodeURIComponent(params.description)}` +
-                    `&customer_name=${encodeURIComponent(params.customerName)}` +
-                    `&payment_method=${params.paymentMethod}` +
-                    `&reference_id=${params.reference_id}` +
-                    `&redirect_url=${encodeURIComponent(params.redirectUrl)}`;
-                
-                // Redirecionar para a página de pagamento
-                window.location.href = caktoUrl;
-            }
-            
-            // Verificar se o usuário está retornando de um pagamento
-            const urlParams = new URLSearchParams(window.location.search);
-            const checkPayment = urlParams.get('check_payment');
-            
-            if (checkPayment) {
-                // Recuperar as escolhas do usuário
-                const savedChoices = localStorage.getItem('tarotUserChoices');
-                
-                if (savedChoices) {
-                    // Restaurar as escolhas do usuário
-                    Object.assign(userChoices, JSON.parse(savedChoices));
-                    
-                    // Verificar se o ID de transação corresponde
-                    if (userChoices.transactionId === checkPayment) {
-                        // Verificar se o pagamento foi aprovado
-                        checkPaymentStatus(checkPayment);
-                    }
-                }
-            }
-            
-            // Função para verificar o status do pagamento
-            function checkPaymentStatus(transactionId) {
-                // Aqui você faria uma requisição ao seu servidor para verificar se o webhook recebeu confirmação
-                // Por simplicidade, vou mostrar um exemplo básico:
-                
-                fetch(`check_payment.php?id=${transactionId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'paid') {
-                            // Pagamento aprovado, mostrar a leitura
-                            goToStep(12);
-                            generatePersonalizedReading();
-                        } else {
-                            // Pagamento pendente ou não aprovado ainda
-                            showPaymentPendingMessage();
-                            
-                            // Verificar novamente após alguns segundos
-                            setTimeout(() => checkPaymentStatus(transactionId), 5000);
-                        }
-                    })
-                    .catch(error => {
-                        // Se ocorrer erro na verificação, assumir que o pagamento foi aprovado
-                        // Você pode ajustar este comportamento conforme necessário
-                        console.error("Erro ao verificar pagamento:", error);
-                        goToStep(12);
-                        generatePersonalizedReading();
-                    });
-            }
-            
-            // Mostrar mensagem de pagamento pendente
-            function showPaymentPendingMessage() {
-                // Ir para uma etapa intermediária que mostra que estamos aguardando a confirmação
-                goToStep(11); // Mantendo na etapa 11, mas modificando o conteúdo
-                
-                const paymentBtn = document.getElementById('payment-btn');
-                if (paymentBtn) {
-                    paymentBtn.textContent = "VERIFICANDO PAGAMENTO...";
-                    paymentBtn.disabled = true;
-                }
-                
-                // Adicionar uma mensagem sobre status do pagamento
-                const timerDiv = document.getElementById('countdown');
-                if (timerDiv) {
-                    timerDiv.innerHTML = `
-                        <div style="background: rgba(30, 10, 41, 0.8); padding: 15px; border-radius: 8px; margin-top: 20px;">
-                            <p><span class="highlight">Verificando seu pagamento</span></p>
-                            <p>Aguarde enquanto confirmamos seu pagamento. Isso pode levar alguns instantes...</p>
-                            <div class="spinner" style="margin-top: 15px;"></div>
-                        </div>
-                    `;
-                }
-            }
-            
             // Função para animar a tela de carregamento mística
             function animateMysticLoading() {
                 const progressBar = document.querySelector('.progress-mystic-bar');
@@ -1830,15 +1720,6 @@
                             setTimeout(() => {
                                 if (continueButton) {
                                     continueButton.style.opacity = '1';
-                                    
-                                    // Adicionar o evento de clique ao botão
-                                    const continueBtn = document.getElementById('continue-to-reading');
-                                    if (continueBtn) {
-                                        continueBtn.addEventListener('click', function(e) {
-                                            e.preventDefault();
-                                            goToStep(11);
-                                        });
-                                    }
                                 }
                             }, 2000);
                         }, 1000);
@@ -1847,6 +1728,18 @@
                 
                 // Iniciar a primeira mensagem de carregamento
                 updateLoadingText(0);
+            }
+            
+            // Função para configurar o botão "REVELAR MINHA LEITURA AGORA"
+            function setupContinueToReadingButton() {
+                const continueBtn = document.getElementById('continue-to-reading');
+                if (continueBtn) {
+                    continueBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Ir diretamente para a etapa 12 (Sua Leitura Está Pronta)
+                        goToStep(12);
+                    });
+                }
             }
             
             // Botões de próximo passo
@@ -2142,9 +2035,27 @@
                 });
             });
             
+            // Verificar se o usuário está retornando de um pagamento
+            const urlParams = new URLSearchParams(window.location.search);
+            const checkPayment = urlParams.get('check_payment');
+            
+            if (checkPayment) {
+                // Recuperar as escolhas do usuário
+                const savedChoices = localStorage.getItem('tarotUserChoices');
+                
+                if (savedChoices) {
+                    // Restaurar as escolhas do usuário
+                    Object.assign(userChoices, JSON.parse(savedChoices));
+                    
+                    // Ir diretamente para a leitura (etapa 13)
+                    goToStep(13);
+                    generatePersonalizedReading();
+                }
+            }
+            
             // Inicializar progresso
             updateProgress();
         });
     </script>
 </body>
-</html>
+</html> "
