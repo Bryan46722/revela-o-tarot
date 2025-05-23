@@ -1650,17 +1650,23 @@
             
             // Botão de pagamento com redirecionamento direto para Cakto
  // Botão de pagamento com redirecionamento direto para Cakto
+// Botão de pagamento com redirecionamento direto para Cakto
 const paymentBtn = document.getElementById('payment-btn');
 if (paymentBtn) {
     paymentBtn.addEventListener('click', function(e) {
         e.preventDefault();
 
-        // ✅ Disparar somente o evento de INICIALIZAÇÃO DE CHECKOUT
+        // Gerar ID único para o evento (evita duplicação)
+        const eventId = 'checkout_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        
+        // ✅ Disparar somente o evento de INICIALIZAÇÃO DE CHECKOUT com ID único
         if (typeof fbq !== 'undefined') {
             fbq('track', 'InitiateCheckout', {
                 content_name: 'Leitura Premium de Tarot',
                 value: 14.90,
                 currency: 'BRL'
+            }, {
+                eventID: eventId
             });
         }
 
@@ -1834,16 +1840,10 @@ if (paymentBtn) {
                         }, 500);
                     }
                     
-                    // Configurações específicas da etapa 12
-                    if (currentStep === 12) {
-                        // Disparar evento do Meta Pixel para "Iniciar Checkout"
-                        if (typeof fbq !== 'undefined') {
-                            fbq('track', 'InitiateCheckout', {
-                                content_name: 'Leitura Premium de Tarot',
-                                value: 14.90,
-                                currency: 'BRL'
-                            });
-                        }
+// Configurações específicas da etapa 12
+if (currentStep === 12) {
+    // NÃO disparar evento aqui - será disparado apenas no botão de pagamento
+    // Removido para evitar eventos duplicados
                         
                         // Iniciar contador e notificações
                         verificarEtapaAtiva();
