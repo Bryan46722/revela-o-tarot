@@ -519,19 +519,7 @@
                 // Gerar conteúdo da leitura
                 generateReadingContent(userName, userTheme, selectedCards);
 
-// Gerar ID único para o evento de compra
-const purchaseEventId = 'purchase_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
 
-// Disparar evento de conversão para Meta Pixel com ID único
-if (typeof fbq !== 'undefined') {
-    fbq('track', 'Purchase', {
-        content_name: 'Leitura Premium de Tarot',
-        value: 14.90,
-        currency: 'BRL'
-    }, {
-        eventID: purchaseEventId
-    });
-}
 
             } catch (error) {
                 console.error('Erro ao gerar leitura:', error);
