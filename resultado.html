@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔮 Revelacao Tarot</title>
+    <title>🔮 Tarot Revelation</title>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -277,263 +277,266 @@
 <body>
     <div class="container">
         <div class="card">
-            <!-- Tela de Leitura Personalizada (aparece após pagamento aprovado) -->
+            <!-- Personalized Reading Screen (appears after payment approved) -->
             <div class="step active" id="reading-result">
-                <h1>🔮 Sua Leitura Personalizada</h1>
+                <h1>🔮 Your Personalized Reading</h1>
                 
-                <p>Querido(a) <span id="user-name" class="highlight">Consulente</span>,</p>
+                <p>Dear <span id="user-name" class="highlight">Seeker</span>,</p>
                 
-                <p class="mystic-quote">O universo conspirou para trazer você até aqui neste momento exato. Não foi coincidência.</p>
+                <p class="mystic-quote">The universe conspired to bring you here at this exact moment. It was no coincidence.</p>
                 
                 <div id="selected-cards-display">
-                    <!-- As cartas selecionadas serão exibidas aqui -->
+                    <!-- Selected cards will be displayed here -->
                 </div>
                 
                 <div id="reading-content">
-                    <!-- O conteúdo da leitura será inserido aqui dinamicamente -->
+                    <!-- Reading content will be inserted here dynamically -->
                 </div>
                 
                 <div class="gratitude-message">
-                    <h3>🙏 Uma Mensagem Especial</h3>
-                    <p>Lembre-se: você tem o poder de transformar sua vida. As cartas apenas iluminam o caminho que já existe dentro de você.</p>
-                    <p>Confie em sua intuição e permita que essa leitura seja um guia em sua jornada.</p>
+                    <h3>🙏 A Special Message</h3>
+                    <p>Remember: you have the power to transform your life. The cards merely illuminate the path that already exists within you.</p>
+                    <p>Trust your intuition and allow this reading to be a guide on your journey.</p>
                 </div>
                 
                 <div class="cosmic-blessing">
-                    ✨ Que a luz e a proteção espiritual estejam sempre com você ✨
+                    ✨ May light and spiritual protection always be with you ✨
                 </div>
                 
                 <p style="text-align: center; margin-top: 30px;">
-                    <strong>Com muito amor e luz,</strong><br>
-                    <span class="highlight">Tarot Místico</span>
+                    <strong>With much love and light,</strong><br>
+                    <span class="highlight">Mystic Tarot</span>
                 </p>
                 
-                <a href="#" class="btn" id="new-reading-btn">Fazer Nova Leitura</a>
+                <a href="#" class="btn" id="new-reading-btn">Get New Reading</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Dados das cartas de tarot
+        // Tarot cards data
         const tarotDeck = [
-            { id: 1, name: "O Louco", image: "https://www.trustedtarot.com/img/cards/the-fool.png" },
-            { id: 2, name: "O Mago", image: "https://www.trustedtarot.com/img/cards/the-magician.png" },
-            { id: 3, name: "A Sacerdotisa", image: "https://www.trustedtarot.com/img/cards/the-high-priestess.png" },
-            { id: 4, name: "A Imperatriz", image: "https://www.trustedtarot.com/img/cards/the-empress.png" },
-            { id: 5, name: "O Imperador", image: "https://www.trustedtarot.com/img/cards/the-emperor.png" },
-            { id: 6, name: "O Hierofante", image: "https://www.trustedtarot.com/img/cards/the-hierophant.png" },
-            { id: 7, name: "Os Enamorados", image: "https://www.trustedtarot.com/img/cards/the-lovers.png" },
-            { id: 8, name: "O Carro", image: "https://www.trustedtarot.com/img/cards/the-chariot.png" },
-            { id: 9, name: "A Força", image: "https://www.trustedtarot.com/img/cards/strength.png" },
-            { id: 10, name: "O Eremita", image: "https://www.trustedtarot.com/img/cards/the-hermit.png" },
-            { id: 11, name: "A Roda da Fortuna", image: "https://www.trustedtarot.com/img/cards/wheel-of-fortune.png" },
-            { id: 12, name: "A Justiça", image: "https://www.trustedtarot.com/img/cards/justice.png" },
-            { id: 13, name: "O Enforcado", image: "https://www.trustedtarot.com/img/cards/the-hanged-man.png" },
-            { id: 14, name: "A Morte", image: "https://www.trustedtarot.com/img/cards/death.png" },
-            { id: 15, name: "A Temperança", image: "https://www.trustedtarot.com/img/cards/temperance.png" },
-            { id: 16, name: "O Diabo", image: "https://www.trustedtarot.com/img/cards/the-devil.png" },
-            { id: 17, name: "A Torre", image: "https://www.trustedtarot.com/img/cards/the-tower.png" },
-            { id: 18, name: "A Estrela", image: "https://www.trustedtarot.com/img/cards/the-star.png" },
-            { id: 19, name: "A Lua", image: "https://www.trustedtarot.com/img/cards/the-moon.png" },
-            { id: 20, name: "O Sol", image: "https://www.trustedtarot.com/img/cards/the-sun.png" },
-            { id: 21, name: "O Julgamento", image: "https://www.trustedtarot.com/img/cards/judgement.png" },
-            { id: 22, name: "O Mundo", image: "https://www.trustedtarot.com/img/cards/the-world.png" }
+            { id: 1, name: "The Fool", image: "https://www.trustedtarot.com/img/cards/the-fool.png" },
+            { id: 2, name: "The Magician", image: "https://www.trustedtarot.com/img/cards/the-magician.png" },
+            { id: 3, name: "The High Priestess", image: "https://www.trustedtarot.com/img/cards/the-high-priestess.png" },
+            { id: 4, name: "The Empress", image: "https://www.trustedtarot.com/img/cards/the-empress.png" },
+            { id: 5, name: "The Emperor", image: "https://www.trustedtarot.com/img/cards/the-emperor.png" },
+            { id: 6, name: "The Hierophant", image: "https://www.trustedtarot.com/img/cards/the-hierophant.png" },
+            { id: 7, name: "The Lovers", image: "https://www.trustedtarot.com/img/cards/the-lovers.png" },
+            { id: 8, name: "The Chariot", image: "https://www.trustedtarot.com/img/cards/the-chariot.png" },
+            { id: 9, name: "Strength", image: "https://www.trustedtarot.com/img/cards/strength.png" },
+            { id: 10, name: "The Hermit", image: "https://www.trustedtarot.com/img/cards/the-hermit.png" },
+            { id: 11, name: "Wheel of Fortune", image: "https://www.trustedtarot.com/img/cards/wheel-of-fortune.png" },
+            { id: 12, name: "Justice", image: "https://www.trustedtarot.com/img/cards/justice.png" },
+            { id: 13, name: "The Hanged Man", image: "https://www.trustedtarot.com/img/cards/the-hanged-man.png" },
+            { id: 14, name: "Death", image: "https://www.trustedtarot.com/img/cards/death.png" },
+            { id: 15, name: "Temperance", image: "https://www.trustedtarot.com/img/cards/temperance.png" },
+            { id: 16, name: "The Devil", image: "https://www.trustedtarot.com/img/cards/the-devil.png" },
+            { id: 17, name: "The Tower", image: "https://www.trustedtarot.com/img/cards/the-tower.png" },
+            { id: 18, name: "The Star", image: "https://www.trustedtarot.com/img/cards/the-star.png" },
+            { id: 19, name: "The Moon", image: "https://www.trustedtarot.com/img/cards/the-moon.png" },
+            { id: 20, name: "The Sun", image: "https://www.trustedtarot.com/img/cards/the-sun.png" },
+            { id: 21, name: "Judgement", image: "https://www.trustedtarot.com/img/cards/judgement.png" },
+            { id: 22, name: "The World", image: "https://www.trustedtarot.com/img/cards/the-world.png" }
         ];
 
-        // Função para obter carta por ID
+        // Function to get card by ID
         function getCardById(id) {
             return tarotDeck.find(card => card.id == id);
         }
 
-        // Leituras personalizadas baseadas no tema
+        // Personalized readings based on focus (English version)
         const themeReadings = {
             'love': {
-                title: 'Revelações do Coração - Amor e Relacionamentos',
-                intro: (name) => `${name}, as energias do amor estão em profunda transformação ao seu redor. O que você está prestes a descobrir mudará sua perspectiva sobre relacionamentos para sempre.`,
+                title: 'Heart Revelations - Love and Relationships',
+                intro: (name) => `${name}, the energies of love are in deep transformation around you. What you're about to discover will forever change your perspective on relationships.`,
                 cardMeanings: {
-                    1: "Sua alma está pronta para um novo começo amoroso. Os ciclos do passado se completaram e uma energia renovada se aproxima de sua vida.",
-                    2: "Você possui um magnetismo especial que atrai almas afins. Sua capacidade de amar profundamente é um dom raro e precioso.",
-                    3: "Seus instintos sobre pessoas são extraordinariamente precisos. Confie mais em sua intuição quando se trata de relacionamentos.",
-                    4: "Uma energia maternal/paternal forte flui através de você, criando relacionamentos nurturantes e duradouros.",
-                    5: "Você busca estabilidade emocional e está pronto(a) para um compromisso sério e duradouro.",
-                    6: "Conexões espirituais profundas marcam seus relacionamentos. Você atrai pessoas que elevam sua vibração.",
-                    7: "Uma decisão importante sobre amor se aproxima. As escolhas que fizer nos próximos 60 dias definirão seu destino romântico.",
-                    8: "Você tem a força para superar qualquer obstáculo no amor. Conflitos atuais se resolverão a seu favor.",
-                    9: "Sua paciência e determinação no amor serão recompensadas. Uma situação que parece perdida pode se reverter.",
-                    10: "Um período de introspecção amorosa está chegando ao fim. Você está pronto(a) para se abrir novamente.",
-                    11: "Uma reviravolta positiva no amor está chegando. O destino conspira para unir você à pessoa certa.",
-                    12: "Justiça emocional será feita. Se alguém te magoou, o universo trará o equilíbrio de volta para sua vida.",
-                    13: "Um sacrifício que você fez no passado por amor será recompensado de forma inesperada.",
-                    14: "Uma fase da sua vida amorosa está terminando para dar lugar a algo infinitamente melhor.",
-                    15: "Equilíbrio e harmonia marcarão seus próximos relacionamentos. Você encontrará sua metade complementar.",
-                    16: "Padrões destrutivos em relacionamentos serão quebrados. Você se libertará de ciclos tóxicos.",
-                    17: "Uma revelação sobre um relacionamento mudará tudo. Prepare-se para uma transformação radical.",
-                    18: "Seus sonhos sobre o amor ideal se manifestarão. Uma esperança antiga será realizada.",
-                    19: "Ilusões sobre alguém serão desfeitas, mas isso o(a) levará à verdade que você precisa ver.",
-                    20: "Alegria e realização no amor estão garantidas. Um período de grande felicidade romântica se aproxima.",
-                    21: "Uma situação amorosa do passado será resolvida definitivamente. Você terá a chance de recomeçar.",
-                    22: "Completude amorosa será alcançada. Você está prestes a viver o relacionamento dos seus sonhos."
+                    1: "Your soul is ready for a new beginning in love. Past cycles have completed and renewed energy is approaching your life.",
+                    2: "You possess special magnetism that attracts kindred souls. Your capacity to love deeply is a rare and precious gift.",
+                    3: "Your instincts about people are extraordinarily accurate. Trust your intuition more when it comes to relationships.",
+                    4: "Strong maternal/paternal energy flows through you, creating nurturing and lasting relationships.",
+                    5: "You seek emotional stability and are ready for a serious and lasting commitment.",
+                    6: "Deep spiritual connections mark your relationships. You attract people who elevate your vibration.",
+                    7: "An important decision about love is approaching. The choices you make in the next 60 days will define your romantic destiny.",
+                    8: "You have the strength to overcome any obstacle in love. Current conflicts will resolve in your favor.",
+                    9: "Your patience and determination in love will be rewarded. A situation that seems lost can turn around.",
+                    10: "A period of love introspection is coming to an end. You're ready to open up again.",
+                    11: "A positive turnaround in love is coming. Destiny conspires to unite you with the right person.",
+                    12: "Emotional justice will be done. If someone hurt you, the universe will bring balance back to your life.",
+                    13: "A sacrifice you made in the past for love will be rewarded unexpectedly.",
+                    14: "A phase of your love life is ending to make way for something infinitely better.",
+                    15: "Balance and harmony will mark your next relationships. You will find your complementary half.",
+                    16: "Destructive patterns in relationships will be broken. You will free yourself from toxic cycles.",
+                    17: "A revelation about a relationship will change everything. Prepare for radical transformation.",
+                    18: "Your dreams about ideal love will manifest. An old hope will be realized.",
+                    19: "Illusions about someone will be dispelled, but this will lead you to the truth you need to see.",
+                    20: "Joy and fulfillment in love are guaranteed. A period of great romantic happiness approaches.",
+                    21: "A past love situation will be resolved definitively. You will have the chance to start over.",
+                    22: "Love completeness will be achieved. You are about to live the relationship of your dreams."
                 },
-                finalMessage: "O amor verdadeiro está mais próximo do que você imagina. Mantenha seu coração aberto e confie no processo divino."
+                finalMessage: "True love is closer than you imagine. Keep your heart open and trust the divine process."
             },
             'career': {
-                title: 'Caminhos da Prosperidade - Carreira e Abundância',
-                intro: (name) => `${name}, as portas da prosperidade estão se abrindo para você. Sua jornada profissional está prestes a tomar uma direção extraordinária.`,
+                title: 'Paths of Prosperity - Career and Abundance',
+                intro: (name) => `${name}, the doors of prosperity are opening for you. Your professional journey is about to take an extraordinary direction.`,
                 cardMeanings: {
-                    1: "Uma nova aventura profissional está começando. Coragem e ousadia levarão você ao sucesso.",
-                    2: "Você tem todas as ferramentas necessárias para manifestar seus objetivos profissionais. É hora de agir.",
-                    3: "Sua intuição nos negócios é excepcional. Confie em seus instintos para tomar decisões importantes.",
-                    4: "Abundância e criatividade fluem através de você. Projetos criativos trarão retorno financeiro.",
-                    5: "Liderança e autoridade marcam seu destino profissional. Uma posição de poder se aproxima.",
-                    6: "Mentores espirituais estão guiando sua carreira. Siga os conselhos de pessoas experientes.",
-                    7: "Uma parceria importante mudará o rumo de sua carreira. Colaborações trarão prosperidade.",
-                    8: "Determinação e foco levarão você ao topo. Obstáculos serão superados com facilidade.",
-                    9: "Sua perseverança será recompensada. Continue firme em seus objetivos, o sucesso está próximo.",
-                    10: "Um período de reflexão profissional se encerra. Clareza sobre seu propósito chegará em breve.",
-                    11: "Uma oportunidade de ouro girará a roda da fortuna a seu favor. Esteja preparado(a).",
-                    12: "Reconhecimento justo por seu trabalho finalmente chegará. Sua dedicação será valorizada.",
-                    13: "Uma mudança de perspectiva sobre dinheiro transformará sua realidade financeira.",
-                    14: "Uma fase profissional se encerra para dar lugar a algo muito mais lucrativo e satisfatório.",
-                    15: "Equilíbrio entre vida pessoal e profissional será alcançado. Sucesso sem sacrificar a felicidade.",
-                    16: "Você se libertará de padrões limitantes sobre dinheiro. Abundância fluirá naturalmente.",
-                    17: "Uma mudança radical na carreira trará resultados surpreendentes. Embrace a transformação.",
-                    18: "Seus sonhos profissionais mais altos se manifestarão. Uma aspiração antiga se realizará.",
-                    19: "Confusões ou mal-entendidos profissionais serão esclarecidos. A verdade prevalecerá.",
-                    20: "Sucesso brilhante e reconhecimento público marcarão esta fase de sua carreira.",
-                    21: "Uma decisão profissional do passado será redimida. Você terá uma segunda chance de ouro.",
-                    22: "Realização completa na carreira está garantida. Você alcançará o ápice de sua profissão."
+                    1: "A new professional adventure is beginning. Courage and boldness will lead you to success.",
+                    2: "You have all the necessary tools to manifest your professional goals. It's time to act.",
+                    3: "Your business intuition is exceptional. Trust your instincts to make important decisions.",
+                    4: "Abundance and creativity flow through you. Creative projects will bring financial return.",
+                    5: "Leadership and authority mark your professional destiny. A position of power approaches.",
+                    6: "Spiritual mentors are guiding your career. Follow the advice of experienced people.",
+                    7: "An important partnership will change the course of your career. Collaborations will bring prosperity.",
+                    8: "Determination and focus will take you to the top. Obstacles will be easily overcome.",
+                    9: "Your perseverance will be rewarded. Stay firm in your goals, success is near.",
+                    10: "A period of professional reflection ends. Clarity about your purpose will come soon.",
+                    11: "A golden opportunity will turn the wheel of fortune in your favor. Be prepared.",
+                    12: "Fair recognition for your work will finally arrive. Your dedication will be valued.",
+                    13: "A change in perspective about money will transform your financial reality.",
+                    14: "A professional phase ends to make way for something much more lucrative and satisfying.",
+                    15: "Balance between personal and professional life will be achieved. Success without sacrificing happiness.",
+                    16: "You will free yourself from limiting patterns about money. Abundance will flow naturally.",
+                    17: "A radical career change will bring surprising results. Embrace the transformation.",
+                    18: "Your highest professional dreams will manifest. An old aspiration will be realized.",
+                    19: "Professional confusions or misunderstandings will be clarified. Truth will prevail.",
+                    20: "Brilliant success and public recognition will mark this phase of your career.",
+                    21: "A past professional decision will be redeemed. You will have a golden second chance.",
+                    22: "Complete career fulfillment is guaranteed. You will reach the peak of your profession."
                 },
-                finalMessage: "Sua prosperidade é inevitável. Continue confiando em seu potencial e o universo multiplicará suas conquistas."
+                finalMessage: "Your prosperity is inevitable. Keep trusting your potential and the universe will multiply your achievements."
             },
             'spiritual': {
-                title: 'Despertar da Alma - Jornada Espiritual',
-                intro: (name) => `${name}, sua alma está passando por um despertar profundo. As revelações que você receberá iluminarão seu caminho espiritual para sempre.`,
+                title: 'Soul Awakening - Spiritual Journey',
+                intro: (name) => `${name}, your soul is undergoing a deep awakening. The revelations you receive will illuminate your spiritual path forever.`,
                 cardMeanings: {
-                    1: "Você está iniciando uma jornada espiritual transformadora. Coragem para explorar o desconhecido interior.",
-                    2: "Seus dons psíquicos e intuitivos estão se manifestando. Você tem acesso a sabedorias superiores.",
-                    3: "Segredos místicos serão revelados a você. Sua conexão com o divino feminino está se fortalecendo.",
-                    4: "Fertilidade espiritual marca esta fase. Seus projetos espirituais florescerão abundantemente.",
-                    5: "Estrutura e disciplina espiritual são necessárias. Crie rotinas sagradas para seu crescimento.",
-                    6: "Ensinamentos espirituais tradicionais ressoam com sua alma. Busque sabedoria ancestral.",
-                    7: "Uma escolha espiritual importante se aproxima. Seu destino divino depende desta decisão.",
-                    8: "Determinação espiritual o(a) levará à iluminação. Continue em sua busca pela verdade.",
-                    9: "Força interior e coragem espiritual superam qualquer adversidade. Você é mais poderoso(a) do que imagina.",
-                    10: "Isolamento espiritual trouxe sabedoria. Agora é hora de compartilhar seus insights com o mundo.",
-                    11: "Uma reviravolta espiritual mudará sua percepção da realidade. Prepare-se para uma expansão consciencial.",
-                    12: "Equilíbrio cármico será restaurado. Suas ações passadas trarão recompensas espirituais.",
-                    13: "Sacrifícios espirituais do passado serão honrados. Uma nova perspectiva divina emerge.",
-                    14: "Uma morte espiritual dará lugar ao renascimento. Transformação profunda da consciência.",
-                    15: "Moderação e equilíbrio espiritual trazem paz interior. Harmonia entre todos os aspectos da vida.",
-                    16: "Libertação de padrões espirituais limitantes. Você se liberta de crenças que não mais servem.",
-                    17: "Uma revelação espiritual mudará tudo. Prepare-se para uma transformação radical da alma.",
-                    18: "Esperanças espirituais se realizarão. Seus sonhos mais elevados se manifestarão.",
-                    19: "Ilusões espirituais serão desfeitas. A verdade divina será revelada claramente.",
-                    20: "Iluminação e alegria espiritual marcam esta fase. Você alcançou um novo nível consciencial.",
-                    21: "Um renascimento espiritual está acontecendo. Você está sendo chamado(a) para um propósito maior.",
-                    22: "Realização espiritual completa. Você encontrou sua conexão definitiva com o divino."
+                    1: "You are beginning a transformative spiritual journey. Courage to explore the unknown interior.",
+                    2: "Your psychic and intuitive gifts are manifesting. You have access to higher wisdom.",
+                    3: "Mystical secrets will be revealed to you. Your connection with the divine feminine is strengthening.",
+                    4: "Spiritual fertility marks this phase. Your spiritual projects will flourish abundantly.",
+                    5: "Structure and spiritual discipline are necessary. Create sacred routines for your growth.",
+                    6: "Traditional spiritual teachings resonate with your soul. Seek ancestral wisdom.",
+                    7: "An important spiritual choice approaches. Your divine destiny depends on this decision.",
+                    8: "Spiritual determination will lead you to enlightenment. Continue in your quest for truth.",
+                    9: "Inner strength and spiritual courage overcome any adversity. You are more powerful than you imagine.",
+                    10: "Spiritual isolation has brought wisdom. Now it's time to share your insights with the world.",
+                    11: "A spiritual turnaround will change your perception of reality. Prepare for consciousness expansion.",
+                    12: "Karmic balance will be restored. Your past actions will bring spiritual rewards.",
+                    13: "Past spiritual sacrifices will be honored. A new divine perspective emerges.",
+                    14: "A spiritual death will give way to rebirth. Deep consciousness transformation.",
+                    15: "Moderation and spiritual balance bring inner peace. Harmony between all aspects of life.",
+                    16: "Liberation from limiting spiritual patterns. You free yourself from beliefs that no longer serve.",
+                    17: "A spiritual revelation will change everything. Prepare for radical soul transformation.",
+                    18: "Spiritual hopes will be realized. Your highest dreams will manifest.",
+                    19: "Spiritual illusions will be dispelled. Divine truth will be clearly revealed.",
+                    20: "Enlightenment and spiritual joy mark this phase. You have reached a new consciousness level.",
+                    21: "A spiritual rebirth is happening. You are being called to a greater purpose.",
+                    22: "Complete spiritual realization. You have found your definitive connection with the divine."
                 },
-                finalMessage: "Você é um ser de luz em constante evolução. Confie em sua jornada espiritual - ela está perfeitamente alinhada com seu propósito divino."
+                finalMessage: "You are a being of light in constant evolution. Trust your spiritual journey - it is perfectly aligned with your divine purpose."
             },
             'health': {
-                title: 'Cura e Renovação - Saúde Integral',
-                intro: (name) => `${name}, energias de cura poderosas estão fluindo em sua direção. Sua jornada de renovação física, mental e espiritual está começando.`,
+                title: 'Healing and Renewal - Integral Health',
+                intro: (name) => `${name}, powerful healing energies are flowing in your direction. Your journey of physical, mental and spiritual renewal is beginning.`,
                 cardMeanings: {
-                    1: "Um novo ciclo de saúde e vitalidade está começando. Coragem para fazer mudanças necessárias.",
-                    2: "Você tem o poder de manifestar sua própria cura. Sua mente é sua ferramenta de transformação.",
-                    3: "Intuição sobre sua saúde está aguçada. Confie em seus instintos sobre o que seu corpo precisa.",
-                    4: "Energia nutritiva e regenerativa flui através de você. Cuidado amoroso consigo mesmo(a) traz resultados.",
-                    5: "Disciplina e estrutura em seus hábitos de saúde trarão resultados duradouros.",
-                    6: "Métodos tradicionais ou alternativos de cura ressoam com você. Busque sabedoria holística.",
-                    7: "Uma escolha importante sobre sua saúde se aproxima. Escolha o caminho que honra seu bem-estar.",
-                    8: "Determinação e força de vontade superam qualquer desafio de saúde. Vitória sobre adversidades.",
-                    9: "Resistência interior e coragem emocional fortalecem seu sistema imunológico.",
-                    10: "Período de introspecção sobre saúde se encerra. Clareza sobre necessidades corporais emerge.",
-                    11: "Uma mudança positiva inesperada em sua saúde está chegando. O destino favorece sua cura.",
-                    12: "Equilíbrio será restaurado em seu corpo. Justiça divina atua em sua recuperação.",
-                    13: "Sacrifícios feitos por sua saúde serão recompensados. Uma nova perspectiva sobre bem-estar.",
-                    14: "Hábitos antigos e prejudiciais morrem para dar lugar a um estilo de vida regenerativo.",
-                    15: "Moderação e equilíbrio trazem saúde perfeita. Harmonia entre corpo, mente e espírito.",
-                    16: "Libertação de padrões tóxicos de pensamento que afetavam sua saúde física.",
-                    17: "Uma revelação sobre sua saúde mudará sua abordagem de bem-estar radicalmente.",
-                    18: "Esperanças de recuperação se realizarão. Cura que parecia impossível se manifesta.",
-                    19: "Confusões sobre diagnósticos ou tratamentos serão esclarecidas. A verdade sobre sua saúde emergirá.",
-                    20: "Vitalidade radiante e energia abundante marcam esta nova fase de sua vida.",
-                    21: "Renascimento físico e energético. Você está sendo renovado(a) em todos os níveis.",
-                    22: "Saúde perfeita e bem-estar completo. Você alcançou o equilíbrio ideal de corpo, mente e alma."
+                    1: "A new cycle of health and vitality is beginning. Courage to make necessary changes.",
+                    2: "You have the power to manifest your own healing. Your mind is your transformation tool.",
+                    3: "Your health intuition is sharp. Trust your instincts about what your body needs.",
+                    4: "Nutritive and regenerative energy flows through you. Loving self-care brings results.",
+                    5: "Discipline and structure in your health habits will bring lasting results.",
+                    6: "Traditional or alternative healing methods resonate with you. Seek holistic wisdom.",
+                    7: "An important choice about your health approaches. Choose the path that honors your well-being.",
+                    8: "Determination and willpower overcome any health challenge. Victory over adversities.",
+                    9: "Inner resistance and emotional courage strengthen your immune system.",
+                    10: "A period of health introspection ends. Clarity about bodily needs emerges.",
+                    11: "An unexpected positive change in your health is coming. Destiny favors your healing.",
+                    12: "Balance will be restored in your body. Divine justice acts in your recovery.",
+                    13: "Sacrifices made for your health will be rewarded. A new perspective on well-being.",
+                    14: "Old harmful habits die to make way for a regenerative lifestyle.",
+                    15: "Moderation and balance bring perfect health. Harmony between body, mind and spirit.",
+                    16: "Liberation from toxic thought patterns that affected your physical health.",
+                    17: "A revelation about your health will radically change your wellness approach.",
+                    18: "Recovery hopes will be realized. Healing that seemed impossible manifests.",
+                    19: "Confusions about diagnoses or treatments will be clarified. Truth about your health emerges.",
+                    20: "Radiant vitality and abundant energy mark this new phase of your life.",
+                    21: "Physical and energetic rebirth. You are being renewed at all levels.",
+                    22: "Perfect health and complete well-being. You have achieved the ideal balance of body, mind and soul."
                 },
-                finalMessage: "Sua saúde é um reflexo de sua energia espiritual. Mantenha pensamentos positivos e práticas amorosas consigo mesmo(a)."
+                finalMessage: "Your health is a reflection of your spiritual energy. Maintain positive thoughts and loving practices with yourself."
             },
             'family': {
-                title: 'Laços Sagrados - Família e Relacionamentos Familiares',
-                intro: (name) => `${name}, os laços familiares são canais de cura e transformação. As revelações sobre sua família iluminarão padrões ancestrais importantes.`,
+                title: 'Sacred Bonds - Family and Family Relationships',
+                intro: (name) => `${name}, family bonds are channels of healing and transformation. Revelations about your family will illuminate important ancestral patterns.`,
                 cardMeanings: {
-                    1: "Um novo ciclo familiar está começando. Coragem para quebrar padrões limitantes das gerações passadas.",
-                    2: "Você tem o dom de transformar dinâmicas familiares. Sua influência positiva cura feridas antigas.",
-                    3: "Segredos familiares serão revelados. Sua intuição sobre a história familiar está correta.",
-                    4: "Energia maternal/paternal forte flui através de você, nutrindo e protegendo os entes queridos.",
-                    5: "Autoridade e responsabilidade familiar recaem sobre você. Liderança familiar sábia é necessária.",
-                    6: "Tradições familiares sagradas devem ser honradas. Busque sabedoria nos ensinamentos ancestrais.",
-                    7: "Uma decisão importante afetará toda a família. Escolha com amor e sabedoria.",
-                    8: "Determinação para proteger a família supera qualquer obstáculo. União familiar se fortalece.",
-                    9: "Força emocional sustenta a família em momentos difíceis. Você é o pilar de apoio.",
-                    10: "Isolamento de questões familiares traz sabedoria. Agora é hora de reconectar com amor.",
-                    11: "Uma mudança inesperada na dinâmica familiar trará resultados positivos para todos.",
-                    12: "Justiça familiar será feita. Conflitos antigos encontrarão resolução equilibrada.",
-                    13: "Sacrifícios feitos pela família serão reconhecidos e honrados. Nova perspectiva sobre relacionamentos.",
-                    14: "Padrões familiares disfuncionais morrem para dar lugar a relacionamentos mais saudáveis.",
-                    15: "Harmonia e equilíbrio são restaurados na família. Paz entre todos os membros.",
-                    16: "Libertação de padrões familiares tóxicos. Você quebra ciclos negativos das gerações passadas.",
-                    17: "Uma revelação familiar mudará a percepção sobre sua história. Transformação radical das relações.",
-                    18: "Esperanças de reconciliação familiar se realizarão. Sonhos de união se manifestam.",
-                    19: "Mal-entendidos familiares serão esclarecidos. A verdade sobre situações antigas emerge.",
-                    20: "Alegria e celebração marcam a vida familiar. Momentos felizes e realizações compartilhadas.",
-                    21: "Renascimento das relações familiares. Uma nova fase de amor e compreensão começa.",
-                    22: "Harmonia familiar completa. Todos os laços são curados e fortalecidos pelo amor."
+                    1: "A new family cycle is beginning. Courage to break limiting patterns from past generations.",
+                    2: "You have the gift of transforming family dynamics. Your positive influence heals old wounds.",
+                    3: "Family secrets will be revealed. Your intuition about family history is correct.",
+                    4: "Strong maternal/paternal energy flows through you, nurturing and protecting loved ones.",
+                    5: "Family authority and responsibility fall upon you. Wise family leadership is necessary.",
+                    6: "Sacred family traditions must be honored. Seek wisdom in ancestral teachings.",
+                    7: "An important decision will affect the whole family. Choose with love and wisdom.",
+                    8: "Determination to protect family overcomes any obstacle. Family unity strengthens.",
+                    9: "Emotional strength sustains family in difficult times. You are the pillar of support.",
+                    10: "Isolation from family issues brings wisdom. Now it's time to reconnect with love.",
+                    11: "An unexpected change in family dynamics will bring positive results for everyone.",
+                    12: "Family justice will be done. Old conflicts will find balanced resolution.",
+                    13: "Sacrifices made for family will be recognized and honored. New perspective on relationships.",
+                    14: "Dysfunctional family patterns die to make way for healthier relationships.",
+                    15: "Harmony and balance are restored in family. Peace among all members.",
+                    16: "Liberation from toxic family patterns. You break negative cycles from past generations.",
+                    17: "A family revelation will change perception about your history. Radical relationship transformation.",
+                    18: "Hopes of family reconciliation will be realized. Dreams of union manifest.",
+                    19: "Family misunderstandings will be clarified. Truth about old situations emerges.",
+                    20: "Joy and celebration mark family life. Happy moments and shared achievements.",
+                    21: "Rebirth of family relationships. A new phase of love and understanding begins.",
+                    22: "Complete family harmony. All bonds are healed and strengthened by love."
                 },
-                finalMessage: "A família é seu primeiro círculo de aprendizado espiritual. Ame, perdoe e cure para transformar gerações."
+                finalMessage: "Family is your first circle of spiritual learning. Love, forgive and heal to transform generations."
             }
         };
 
-        // Função principal que gera a leitura personalizada
+        // Main function that generates personalized reading
         function generatePersonalizedReading() {
             try {
-                // Recuperar dados salvos do localStorage
+                // Retrieve saved data from localStorage
                 const savedData = localStorage.getItem('tarotUserChoices');
                 if (!savedData) {
-                    // Se não há dados salvos, mostrar mensagem genérica
+                    // If no saved data, show generic message
                     showGenericReading();
                     return;
                 }
 
                 const userChoices = JSON.parse(savedData);
-                const userName = userChoices.name || 'Consulente';
-                const userTheme = userChoices.theme || 'spiritual';
+                console.log('Retrieved data:', userChoices); // Debug
+
+                // Use 'focus' instead of 'theme' for compatibility with main site
+                const userName = userChoices.name || 'Seeker';
+                const userFocus = userChoices.focus || 'spiritual'; // Change here
                 const selectedCards = userChoices.selectedCards || [];
 
-                // Atualizar nome do usuário
+                console.log('Name:', userName, 'Focus:', userFocus, 'Cards:', selectedCards); // Debug
+
+                // Update user name
                 document.getElementById('user-name').textContent = userName;
 
-                // Mostrar cartas selecionadas
+                // Show selected cards
                 displaySelectedCards(selectedCards);
 
-                // Gerar conteúdo da leitura
-                generateReadingContent(userName, userTheme, selectedCards);
-
-
+                // Generate reading content
+                generateReadingContent(userName, userFocus, selectedCards);
 
             } catch (error) {
-                console.error('Erro ao gerar leitura:', error);
+                console.error('Error generating reading:', error);
                 showGenericReading();
             }
         }
 
-        // Função para mostrar as cartas selecionadas
+        // Function to show selected cards
         function displaySelectedCards(selectedCards) {
             const cardsContainer = document.getElementById('selected-cards-display');
             if (!cardsContainer || !selectedCards.length) return;
 
             let cardsHTML = '<div class="selected-tarot-cards">';
-            cardsHTML += '<h3>Suas Cartas Escolhidas</h3>';
+            cardsHTML += '<h3>Your Chosen Cards</h3>';
             
             selectedCards.forEach((card, index) => {
                 const cardData = getCardById(card.id);
@@ -542,7 +545,7 @@
                         <div class="selected-card">
                             <img src="${cardData.image}" alt="${cardData.name}">
                             <p style="margin-top: 10px; font-weight: bold; color: var(--accent);">${cardData.name}</p>
-                            <p style="font-size: 0.9rem;">Posição ${index + 1}</p>
+                            <p style="font-size: 0.9rem;">Position ${index + 1}</p>
                         </div>
                     `;
                 }
@@ -552,12 +555,13 @@
             cardsContainer.innerHTML = cardsHTML;
         }
 
-        // Função para gerar o conteúdo completo da leitura
-        function generateReadingContent(userName, theme, selectedCards) {
+        // Function to generate complete reading content
+        function generateReadingContent(userName, focus, selectedCards) {
             const readingContainer = document.getElementById('reading-content');
             if (!readingContainer) return;
 
-            const themeData = themeReadings[theme] || themeReadings.spiritual;
+            // Use focus instead of theme
+            const themeData = themeReadings[focus] || themeReadings.spiritual;
             
             let content = `
                 <div class="revelation-section">
@@ -566,178 +570,178 @@
                 </div>
             `;
 
-            // Interpretar cada carta selecionada
+            // Interpret each selected card
             selectedCards.forEach((card, index) => {
                 const cardData = getCardById(card.id);
-                const meaning = themeData.cardMeanings[card.id] || `Esta carta traz energias de transformação e crescimento para sua vida.`;
+                const meaning = themeData.cardMeanings[card.id] || `This card brings energies of transformation and growth to your life.`;
                 
                 content += `
                     <div class="card-interpretation">
-                        <h4>🔮 ${cardData ? cardData.name : 'Carta Mística'} - Posição ${index + 1}</h4>
+                        <h4>🔮 ${cardData ? cardData.name : 'Mystic Card'} - Position ${index + 1}</h4>
                         <p>${meaning}</p>
                     </div>
                 `;
             });
 
-            // Adicionar síntese personalizada
-            content += generatePersonalizedSynthesis(userName, theme, selectedCards);
+            // Add personalized synthesis
+            content += generatePersonalizedSynthesis(userName, focus, selectedCards);
 
-            // Adicionar mensagem final
+            // Add final message
             content += `
                 <div class="revelation-section">
-                    <h3>✨ Mensagem Final das Cartas</h3>
+                    <h3>✨ Final Message from the Cards</h3>
                     <p>${themeData.finalMessage}</p>
-                    <p class="mystic-quote">Lembre-se: você co-criou esta leitura com o universo. Cada palavra ressoa com sua vibração atual porque você estava pronto(a) para receber estas revelações.</p>
+                    <p class="mystic-quote">Remember: you co-created this reading with the universe. Each word resonates with your current vibration because you were ready to receive these revelations.</p>
                 </div>
             `;
 
-            // Adicionar orientações práticas
-            content += generatePracticalGuidance(theme, selectedCards);
+            // Add practical guidance
+            content += generatePracticalGuidance(focus, selectedCards);
 
             readingContainer.innerHTML = content;
         }
 
-        // Função para gerar síntese personalizada
-        function generatePersonalizedSynthesis(userName, theme, selectedCards) {
+        // Function to generate personalized synthesis
+        function generatePersonalizedSynthesis(userName, focus, selectedCards) {
             const syntheses = {
                 love: `
                     <div class="revelation-section">
-                        <h3>💝 Síntese do Seu Caminho Amoroso</h3>
-                        <p>${userName}, as três cartas que você escolheu revelam um padrão claro: você está em um momento de transformação amorosa profunda. Sua alma está se preparando para receber ou aprofundar um amor que será diferente de tudo que já viveu.</p>
-                        <p>O universo quer que você saiba: pare de questionar se é merecedor(a) de amor. Você É amor, e esse reconhecimento interior atrairá exatamente a pessoa que complementará sua jornada.</p>
+                        <h3>💝 Synthesis of Your Love Path</h3>
+                        <p>${userName}, the three cards you chose reveal a clear pattern: you are in a moment of profound love transformation. Your soul is preparing to receive or deepen a love that will be different from anything you've ever experienced.</p>
+                        <p>The universe wants you to know: stop questioning whether you deserve love. You ARE love, and this inner recognition will attract exactly the person who will complement your journey.</p>
                     </div>
                 `,
                 career: `
                     <div class="revelation-section">
-                        <h3>💰 Síntese do Seu Caminho Profissional</h3>
-                        <p>${userName}, suas cartas mostram que você está no limiar de uma expansão profissional significativa. Talentos que você considera "normais" são na verdade dons únicos que o mercado está esperando.</p>
-                        <p>A mensagem é clara: pare de subestimar seu valor. Nos próximos 6 meses, oportunidades surgirão que validarão tudo o que você sempre soube sobre seu potencial.</p>
+                        <h3>💰 Synthesis of Your Professional Path</h3>
+                        <p>${userName}, your cards show that you are on the threshold of significant professional expansion. Talents you consider "normal" are actually unique gifts the market is waiting for.</p>
+                        <p>The message is clear: stop underestimating your value. In the next 6 months, opportunities will arise that will validate everything you've always known about your potential.</p>
                     </div>
                 `,
                 spiritual: `
                     <div class="revelation-section">
-                        <h3>🌟 Síntese do Seu Despertar Espiritual</h3>
-                        <p>${userName}, suas cartas indicam que você está passando por um despertar espiritual acelerado. Experiências que pareciam casualidade são na verdade sinais de que você está se alinhando com seu propósito maior.</p>
-                        <p>Confie mais em sua intuição - ela está se tornando uma bússola espiritual precisa que o(a) guiará em todas as áreas da vida.</p>
+                        <h3>🌟 Synthesis of Your Spiritual Awakening</h3>
+                        <p>${userName}, your cards indicate you are undergoing an accelerated spiritual awakening. Experiences that seemed like coincidence are actually signs that you are aligning with your greater purpose.</p>
+                        <p>Trust your intuition more - it is becoming a precise spiritual compass that will guide you in all areas of life.</p>
                     </div>
                 `,
                 health: `
                     <div class="revelation-section">
-                        <h3>🌿 Síntese da Sua Jornada de Cura</h3>
-                        <p>${userName}, suas cartas revelam que você possui uma capacidade natural de autocura muito poderosa. Seu corpo está mais sintonizado com suas emoções do que você imagina.</p>
-                        <p>A chave para sua saúde plena está em equilibrar mente, corpo e espírito. Práticas que nutrem sua alma automaticamente beneficiarão sua saúde física.</p>
+                        <h3>🌿 Synthesis of Your Healing Journey</h3>
+                        <p>${userName}, your cards reveal that you possess a very powerful natural self-healing capacity. Your body is more attuned to your emotions than you imagine.</p>
+                        <p>The key to your complete health is balancing mind, body and spirit. Practices that nourish your soul will automatically benefit your physical health.</p>
                     </div>
                 `,
                 family: `
                     <div class="revelation-section">
-                        <h3>👨‍👩‍👧‍👦 Síntese dos Seus Laços Familiares</h3>
-                        <p>${userName}, suas cartas mostram que você tem um papel especial como curador(a) de padrões familiares. Experiências que você viveu serviram para quebrar ciclos negativos das gerações passadas.</p>
-                        <p>Sua família precisa da sua luz e sabedoria, mesmo que nem sempre expressem isso. Você é o elo de transformação que eles estavam esperando.</p>
+                        <h3>👨‍👩‍👧‍👦 Synthesis of Your Family Bonds</h3>
+                        <p>${userName}, your cards show that you have a special role as a healer of family patterns. Experiences you've lived served to break negative cycles from past generations.</p>
+                        <p>Your family needs your light and wisdom, even if they don't always express it. You are the transformational link they were waiting for.</p>
                     </div>
                 `
             };
 
-            return syntheses[theme] || syntheses.spiritual;
+            return syntheses[focus] || syntheses.spiritual;
         }
 
-        // Função para gerar orientações práticas
-        function generatePracticalGuidance(theme, selectedCards) {
+        // Function to generate practical guidance
+        function generatePracticalGuidance(focus, selectedCards) {
             const guidances = {
                 love: `
                     <div class="revelation-section">
-                        <h3>💫 Orientações Práticas para o Amor</h3>
-                        <p><strong>Nos próximos 30 dias:</strong></p>
-                        <p>• Pratique o amor próprio diariamente - olhe no espelho e diga uma qualidade sua</p>
-                        <p>• Use cores que favorecem o amor: rosa, verde e dourado</p>
-                        <p>• Medite 5 minutos visualizando seu coração irradiando luz rosa</p>
-                        <p>• Seja receptivo(a) a convites e novas experiências sociais</p>
+                        <h3>💫 Practical Guidance for Love</h3>
+                        <p><strong>For the next 30 days:</strong></p>
+                        <p>• Practice self-love daily - look in the mirror and say one quality about yourself</p>
+                        <p>• Wear colors that favor love: pink, green and gold</p>
+                        <p>• Meditate 5 minutes visualizing your heart radiating pink light</p>
+                        <p>• Be receptive to invitations and new social experiences</p>
                     </div>
                 `,
                 career: `
                     <div class="revelation-section">
-                        <h3>💫 Orientações Práticas para Prosperidade</h3>
-                        <p><strong>Nos próximos 30 dias:</strong></p>
-                        <p>• Anote 3 qualidades profissionais suas todos os dias</p>
-                        <p>• Vista-se com cores que representam abundância: dourado, verde e azul marinho</p>
-                        <p>• Organize seu espaço de trabalho para favorecer produtividade</p>
-                        <p>• Invista em aprendizado relacionado aos seus talentos naturais</p>
+                        <h3>💫 Practical Guidance for Prosperity</h3>
+                        <p><strong>For the next 30 days:</strong></p>
+                        <p>• Write down 3 of your professional qualities every day</p>
+                        <p>• Dress in colors that represent abundance: gold, green and navy blue</p>
+                        <p>• Organize your workspace to favor productivity</p>
+                        <p>• Invest in learning related to your natural talents</p>
                     </div>
                 `,
                 spiritual: `
                     <div class="revelation-section">
-                        <h3>💫 Orientações Práticas para Evolução Espiritual</h3>
-                        <p><strong>Nos próximos 30 dias:</strong></p>
-                        <p>• Dedique 10 minutos diários à meditação silenciosa</p>
-                        <p>• Mantenha um diário de sincronicidades e sonhos</p>
-                        <p>• Conecte-se com a natureza pelo menos 2x por semana</p>
-                        <p>• Pratique gratidão todas as noites antes de dormir</p>
+                        <h3>💫 Practical Guidance for Spiritual Evolution</h3>
+                        <p><strong>For the next 30 days:</strong></p>
+                        <p>• Dedicate 10 minutes daily to silent meditation</p>
+                        <p>• Keep a journal of synchronicities and dreams</p>
+                        <p>• Connect with nature at least 2x per week</p>
+                        <p>• Practice gratitude every night before sleep</p>
                     </div>
                 `,
                 health: `
                     <div class="revelation-section">
-                        <h3>💫 Orientações Práticas para Saúde Integral</h3>
-                        <p><strong>Nos próximos 30 dias:</strong></p>
-                        <p>• Beba água com intenção de cura a cada gole</p>
-                        <p>• Pratique respiração consciente 3x ao dia</p>
-                        <p>• Consuma alimentos com cores variadas para equilibrar chakras</p>
-                        <p>• Durma 7-8 horas por noite para regeneração completa</p>
+                        <h3>💫 Practical Guidance for Integral Health</h3>
+                        <p><strong>For the next 30 days:</strong></p>
+                        <p>• Drink water with healing intention with each sip</p>
+                        <p>• Practice conscious breathing 3x daily</p>
+                        <p>• Consume foods with varied colors to balance chakras</p>
+                        <p>• Sleep 7-8 hours per night for complete regeneration</p>
                     </div>
                 `,
                 family: `
                     <div class="revelation-section">
-                        <h3>💫 Orientações Práticas para Harmonia Familiar</h3>
-                        <p><strong>Nos próximos 30 dias:</strong></p>
-                        <p>• Envie energia de amor para familiares distantes mentalmente</p>
-                        <p>• Pratique o perdão através de cartas que você escreve mas não envia</p>
-                        <p>• Mantenha fotos de família em locais visíveis com energia positiva</p>
-                        <p>• Inicie conversas que fortaleçam os laços afetivos</p>
+                        <h3>💫 Practical Guidance for Family Harmony</h3>
+                        <p><strong>For the next 30 days:</strong></p>
+                        <p>• Send love energy to distant family members mentally</p>
+                        <p>• Practice forgiveness through letters you write but don't send</p>
+                        <p>• Keep family photos in visible places with positive energy</p>
+                        <p>• Initiate conversations that strengthen emotional bonds</p>
                     </div>
                 `
             };
 
-            return guidances[theme] || guidances.spiritual;
+            return guidances[focus] || guidances.spiritual;
         }
 
-        // Função para mostrar leitura genérica caso não haja dados salvos
+        // Function to show generic reading if no saved data
         function showGenericReading() {
             const readingContainer = document.getElementById('reading-content');
             const userName = document.getElementById('user-name');
             
-            userName.textContent = 'Consulente';
+            userName.textContent = 'Seeker';
             
             readingContainer.innerHTML = `
                 <div class="revelation-section">
-                    <h3>🔮 Sua Leitura Espiritual</h3>
-                    <p>As energias universais se alinharam para trazer uma mensagem especial para você neste momento.</p>
+                    <h3>🔮 Your Spiritual Reading</h3>
+                    <p>Universal energies have aligned to bring a special message for you at this moment.</p>
                 </div>
                 
                 <div class="card-interpretation">
-                    <h4>✨ Primeira Revelação</h4>
-                    <p>Você está passando por um período de transformação profunda. Mudanças que pareciam impossíveis estão se manifestando em sua vida, mesmo que você ainda não consiga ver completamente.</p>
+                    <h4>✨ First Revelation</h4>
+                    <p>You are going through a period of profound transformation. Changes that seemed impossible are manifesting in your life, even if you can't see them completely yet.</p>
                 </div>
                 
                 <div class="card-interpretation">
-                    <h4>💫 Segunda Revelação</h4>
-                    <p>Sua intuição está mais aguçada do que nunca. Confie nos insights que chegam até você, especialmente aqueles que surgem nos momentos de silêncio e contemplação.</p>
+                    <h4>💫 Second Revelation</h4>
+                    <p>Your intuition is sharper than ever. Trust the insights that come to you, especially those that arise in moments of silence and contemplation.</p>
                 </div>
                 
                 <div class="card-interpretation">
-                    <h4>🌟 Terceira Revelação</h4>
-                    <p>Um ciclo importante está se completando em sua vida. O que você considerava um fim, na verdade é o início de algo muito mais alinhado com sua essência verdadeira.</p>
+                    <h4>🌟 Third Revelation</h4>
+                    <p>An important cycle is completing in your life. What you considered an end is actually the beginning of something much more aligned with your true essence.</p>
                 </div>
                 
                 <div class="revelation-section">
-                    <h3>💝 Mensagem Final</h3>
-                    <p>O universo quer que você saiba: você não está sozinho(a) nesta jornada. Guias espirituais e energia divina estão conspirando a seu favor, preparando o caminho para suas maiores realizações.</p>
+                    <h3>💝 Final Message</h3>
+                    <p>The universe wants you to know: you are not alone on this journey. Spirit guides and divine energy are conspiring in your favor, preparing the path for your greatest achievements.</p>
                 </div>
             `;
         }
 
-        // Função para detectar se é retorno de pagamento
+        // Function to detect if it's payment return
         function checkPaymentReturn() {
             const urlParams = new URLSearchParams(window.location.search);
             
-            // Verificar parâmetros comuns de retorno de pagamento
+            // Check common payment return parameters
             const isPaymentReturn = urlParams.get('payment') === 'success' || 
                                   urlParams.get('status') === 'approved' ||
                                   urlParams.get('checkout') === 'complete' ||
@@ -746,24 +750,24 @@
             return isPaymentReturn;
         }
 
-        // Botão para nova leitura
+        // Button for new reading
         document.getElementById('new-reading-btn').addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Limpar dados salvos
+            // Clear saved data
             localStorage.removeItem('tarotUserChoices');
             
-            // Redirecionar para o site principal
+            // Redirect to main site
             window.location.href = 'https://revelacaotarot.online';
         });
 
-        // Inicialização quando a página carrega
+        // Initialization when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            // Verificar se é retorno de pagamento ou se há dados salvos
+            // Check if it's payment return or if there's saved data
             if (checkPaymentReturn() || localStorage.getItem('tarotUserChoices')) {
                 generatePersonalizedReading();
             } else {
-                // Se não há dados e não é retorno de pagamento, mostrar leitura genérica
+                // If no data and not payment return, show generic reading
                 showGenericReading();
             }
         });

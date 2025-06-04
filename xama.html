@@ -1,0 +1,3240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimuladoCNH Pro 2025 - A Revolução da Aprovação Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #f59e0b;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #0f172a;
+            --light: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+            --gradient-secondary: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
+            --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            --blur-sm: blur(4px);
+            --blur: blur(8px);
+            --blur-md: blur(12px);
+            --blur-lg: blur(16px);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--gray-50);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            opacity: 0.03;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.1;
+            }
+            90% {
+                opacity: 0.1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Header Premium */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: var(--blur-md);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            backdrop-filter: var(--blur-lg);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .nav-stats {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 50px;
+            backdrop-filter: var(--blur-sm);
+        }
+
+        .stat-item i {
+            color: var(--primary);
+        }
+
+        /* Pages */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Premium */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, 
+                rgba(99, 102, 241, 0.9) 0%, 
+                rgba(139, 92, 246, 0.8) 30%, 
+                rgba(6, 182, 212, 0.7) 70%, 
+                rgba(16, 185, 129, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: var(--blur-md);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideInDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modalidades Premium */
+        .modalidades {
+            padding: 6rem 0;
+            background: var(--light);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .service-tab {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 50px;
+            background: var(--light);
+            color: var(--gray-600);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .service-tab:hover::before,
+        .service-tab.active::before {
+            left: 0;
+        }
+
+        .service-tab:hover,
+        .service-tab.active {
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .services-content {
+            position: relative;
+        }
+
+        .service-section {
+            display: none;
+        }
+
+        .service-section.active {
+            display: block;
+            animation: fadeInScale 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .modalidade-card {
+            background: var(--light);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: var(--blur-sm);
+        }
+
+        .modalidade-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .modalidade-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+            border-color: var(--primary);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modalidade-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .modalidade-card .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: var(--shadow-lg);
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .modalidade-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+        }
+
+        .modalidade-card p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .questions-count {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .card-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .card-features i {
+            color: var(--success);
+            font-size: 0.8rem;
+        }
+
+        /* Buttons Premium */
+        .btn {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .btn-success {
+            background: var(--gradient-success);
+        }
+
+        .btn-secondary {
+            background: var(--gradient-secondary);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Quiz Premium */
+        .quiz-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--light);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            backdrop-filter: var(--blur-md);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            width: 0%;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .quiz-header {
+            padding: 2.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .quiz-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .quiz-counter {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-timer {
+            font-size: 1rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .question-container {
+            padding: 3rem;
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            color: var(--gray-900);
+        }
+
+        .answers {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .answer {
+            background: var(--gray-50);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .answer:hover {
+            border-color: var(--primary);
+            transform: translateX(8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .answer:hover::before {
+            opacity: 0.05;
+        }
+
+        .answer.selected {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .answer.correct {
+            border-color: var(--success);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .answer.incorrect {
+            border-color: var(--danger);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .answer label {
+            display: block;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quiz-controls {
+            padding: 2.5rem;
+            text-align: center;
+            background: var(--gray-50);
+        }
+
+        .score-display {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: inline-block;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Results Premium */
+        .results-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .result-score {
+            text-align: center;
+            background: var(--light);
+            padding: 4rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-2xl);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-score::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, var(--primary), var(--accent), var(--success), var(--primary));
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .score-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: conic-gradient(var(--success) 0deg, var(--success) var(--score-angle, 0deg), var(--gray-200) var(--score-angle, 0deg));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem auto;
+            position: relative;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .score-circle::before {
+            content: '';
+            width: 200px;
+            height: 200px;
+            background: var(--light);
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: inset var(--shadow-lg);
+        }
+
+        .score-text {
+            position: relative;
+            z-index: 2;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gray-900);
+        }
+
+        .performance-message {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Offer Premium */
+        .offer-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-800) 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(99,102,241,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .offer-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .offer-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: var(--light);
+            color: var(--gray-900);
+            padding: 4rem;
+            border-radius: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-primary);
+        }
+
+        .pricing-badge {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .old-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: var(--gray-400);
+            margin-bottom: 0.5rem;
+        }
+
+        .new-price {
+            font-size: 4rem;
+            font-weight: 900;
+            background: var(--gradient-success);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .countdown-timer {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            font-weight: 700;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .countdown-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            min-width: 60px;
+        }
+
+        .countdown-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .urgency-alert {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid var(--danger);
+            color: var(--danger);
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            margin: 2rem 0;
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { border-color: var(--danger); }
+            50% { border-color: rgba(239, 68, 68, 0.5); }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        /* Credibility Premium */
+        .credibility {
+            padding: 6rem 0;
+            background: var(--gray-50);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            background: var(--light);
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+
+        .testimonials {
+            margin: 4rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            border: 1px solid var(--gray-200);
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 6rem;
+            color: var(--primary);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .testimonial-info h4 {
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-top: 1rem;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 1.2rem;
+        }
+
+        /* Popup Premium */
+        .popup-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid var(--gray-200);
+            z-index: 1001;
+            transform: translateX(400px);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 350px;
+        }
+
+        .popup-notification.show {
+            transform: translateX(0);
+        }
+
+        .popup-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .popup-content h4 {
+            font-weight: 600;
+            color: var(--gray-900);
+            font-size: 0.9rem;
+        }
+
+        .popup-content p {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .popup-time {
+            color: var(--gray-400);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Loading Premium */
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--gray-200);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 2rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .loading-progress {
+            width: 200px;
+            height: 4px;
+            background: var(--gray-200);
+            border-radius: 2px;
+            margin: 1rem auto;
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            animation: loadingProgress 3s ease-in-out;
+        }
+
+        @keyframes loadingProgress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        /* Blocked Section Premium */
+        .blocked-section {
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-50) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px dashed var(--gray-300);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blocked-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(99, 102, 241, 0.05) 10px,
+                rgba(99, 102, 241, 0.05) 20px
+            );
+        }
+
+        .blocked-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .blocked-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .blocked-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+        }
+
+        .blocked-text {
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blocked-btn {
+            background: var(--gray-300);
+            color: var(--gray-500);
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .blocked-btn:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Responsive Premium */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 4rem 0;
+                min-height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .services-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quiz-container {
+                margin: 1rem;
+            }
+
+            .pricing-card {
+                padding: 2rem;
+            }
+
+            .new-price {
+                font-size: 3rem;
+            }
+
+            .countdown-numbers {
+                flex-wrap: wrap;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: var(--blur-md);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Glow Effects */
+        .glow {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .glow-success {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .glow-warning {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header Premium -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-car-side"></i>
+                    SimuladoCNH Pro 2025
+                </div>
+                <div class="nav-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <span>25.000+ Aprovados</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-shield-check"></i>
+                        <span>97.8% Sucesso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page 1: Home Premium -->
+    <div id="homePage" class="page active">
+        <!-- Hero Premium -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Plataforma #1 do Brasil em Aprovação</span>
+                    </div>
+                    <h1>A Revolução da Sua Aprovação na CNH</h1>
+                    <p>Sistema de Inteligência Artificial que adapta as questões ao seu perfil, aumentando suas chances de aprovação em 400%</p>
+                    
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">97.8%</span>
+                            <span class="hero-stat-label">Taxa de Aprovação</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">25k+</span>
+                            <span class="hero-stat-label">Aprovados em 2024</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">2M+</span>
+                            <span class="hero-stat-label">Questões Resolvidas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="modalidades">
+            <div class="container">
+                <h2 class="section-title">Seus Serviços Completos para CNH</h2>
+                <p class="section-subtitle">Da primeira habilitação aos recursos judiciais - tudo em uma plataforma premium</p>
+                
+                <!-- Service Navigation -->
+                <div class="services-nav">
+                    <div class="service-tab active" data-service="simulados">
+                        <i class="fas fa-laptop-code"></i> Simulados Inteligentes
+                    </div>
+                    <div class="service-tab" data-service="recursos">
+                        <i class="fas fa-balance-scale"></i> Recursos Administrativos
+                    </div>
+                    <div class="service-tab" data-service="cursos">
+                        <i class="fas fa-graduation-cap"></i> Cursos Detran
+                    </div>
+                </div>
+
+                <!-- Services Content -->
+                <div class="services-content">
+                    <!-- Simulados Section -->
+                    <div class="service-section active" id="simulados">
+                        <div class="cards-grid">
+                            <div class="modalidade-card" onclick="iniciarQuiz('primeira-cnh')">
+                                <div class="icon">
+                                    <i class="fas fa-id-card"></i>
+                                </div>
+                                <h3>Simulado Prova Primeira CNH</h3>
+                                <p>O primeiro simulado que realmente aprova - questões reais do Detran atualizadas 2025</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-infinity"></i> Questões Reais Detran
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Questões Oficiais do Detran</li>
+                                    <li><i class="fas fa-check"></i> Sistema que Realmente Aprova</li>
+                                    <li><i class="fas fa-check"></i> Análise de Performance</li>
+                                    <li><i class="fas fa-check"></i> Atualizado Janeiro 2025</li>
+                                </ul>
+                                <button class="btn">
+                                    <i class="fas fa-rocket"></i>
+                                    Começar Teste Gratuito
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="iniciarQuiz('renovacao')">
+                                <div class="icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <h3>Simulado Prova Renovação</h3>
+                                <p>Simulado com questões oficiais para renovação da CNH - baseado nas provas reais do Detran</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-clock"></i> Prova Oficial
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Questões Oficiais do Detran</li>
+                                    <li><i class="fas fa-check"></i> Específico para Renovação</li>
+                                    <li><i class="fas fa-check"></i> Aprovação Garantida</li>
+                                    <li><i class="fas fa-check"></i> Conteúdo Atualizado</li>
+                                </ul>
+                                <button class="btn">
+                                    <i class="fas fa-calendar-check"></i>
+                                    Treinar Renovação
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="iniciarQuiz('reciclagem')">
+                                <div class="icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <h3>Simulado Prova Suspensão</h3>
+                                <p>Simulado específico para quem vai fazer prova por suspensão da CNH - questões que realmente caem</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-medal"></i> Prova Oficial Detran
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Questões Reais da Prova</li>
+                                    <li><i class="fas fa-check"></i> Específico para Suspensão</li>
+                                    <li><i class="fas fa-check"></i> Alto Índice de Aprovação</li>
+                                    <li><i class="fas fa-check"></i> Conteúdo Atualizado 2025</li>
+                                </ul>
+                                <button class="btn">
+                                    <i class="fas fa-redo"></i>
+                                    Treinar para Prova
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="iniciarQuiz('mudanca-categoria')">
+                                <div class="icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <h3>Simulado Mudança de Categoria</h3>
+                                <p>Simulado oficial para adicionar categorias C, D, E na CNH - questões reais do Detran</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-layer-group"></i> Todas as Categorias
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Categorias A, B, C, D, E</li>
+                                    <li><i class="fas fa-check"></i> Questões Oficiais</li>
+                                    <li><i class="fas fa-check"></i> Conteúdo Específico</li>
+                                    <li><i class="fas fa-check"></i> Alta Taxa de Aprovação</li>
+                                </ul>
+                                <button class="btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    Treinar Categoria
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="iniciarQuiz('cnh-vencida')">
+                                <div class="icon">
+                                    <i class="fas fa-calendar-times"></i>
+                                </div>
+                                <h3>Simulado CNH Vencida</h3>
+                                <p>Simulado específico para reativar CNH vencida há mais de 5 anos - questões atualizadas</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-history"></i> Reativação Completa
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Questões Oficiais Detran</li>
+                                    <li><i class="fas fa-check"></i> Específico CNH Vencida</li>
+                                    <li><i class="fas fa-check"></i> Conteúdo Completo</li>
+                                    <li><i class="fas fa-check"></i> Aprovação Garantida</li>
+                                </ul>
+                                <button class="btn">
+                                    <i class="fas fa-power-off"></i>
+                                    Treinar Reativação
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="iniciarQuiz('cnh-especial')">
+                                <div class="icon">
+                                    <i class="fas fa-universal-access"></i>
+                                </div>
+                                <h3>Simulado CNH Especial (PCD)</h3>
+                                <p>Simulado adaptado para pessoas com deficiência - questões oficiais com total acessibilidade</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-heart"></i> Totalmente Acessível
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Plataforma 100% Acessível</li>
+                                    <li><i class="fas fa-check"></i> Questões Oficiais Detran</li>
+                                    <li><i class="fas fa-check"></i> Suporte Especializado</li>
+                                    <li><i class="fas fa-check"></i> Adaptações Inclusas</li>
+                                </ul>
+                                <button class="btn">
+                                    <i class="fas fa-hands-helping"></i>
+                                    Treinar PCD
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recursos Administrativos Section -->
+                    <div class="service-section" id="recursos">
+                        <div class="cards-grid">
+                            <div class="modalidade-card" onclick="abrirWhatsApp('suspensao')">
+                                <div class="icon">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <h3>Recurso de Suspensão</h3>
+                                <p>Recorra da suspensão da sua CNH com nossos especialistas em trânsito</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-gavel"></i> 95% de Sucesso
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Especialistas em Trânsito</li>
+                                    <li><i class="fas fa-check"></i> Análise Gratuita do Caso</li>
+                                    <li><i class="fas fa-check"></i> Acompanhamento Total</li>
+                                    <li><i class="fas fa-check"></i> Sem Taxa se Perder</li>
+                                </ul>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Analisar Meu Caso
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsApp('cassacao')">
+                                <div class="icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <h3>Recurso de Cassação</h3>
+                                <p>Recupere sua CNH cassada com nossa equipe especializada</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-balance-scale"></i> Análise Jurídica
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Revisão Completa do Processo</li>
+                                    <li><i class="fas fa-check"></i> Estratégia Personalizada</li>
+                                    <li><i class="fas fa-check"></i> Recursos em Todas Instâncias</li>
+                                    <li><i class="fas fa-check"></i> Garantia de Resultado</li>
+                                </ul>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-undo-alt"></i>
+                                    Reverter Cassação
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsApp('multa')">
+                                <div class="icon">
+                                    <i class="fas fa-receipt"></i>
+                                </div>
+                                <h3>Recurso de Multa</h3>
+                                <p>Conteste multas indevidas com nossa plataforma automatizada de recursos</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-search"></i> Análise Jurídica
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Análise Automática</li>
+                                    <li><i class="fas fa-check"></i> Recursos Inteligentes</li>
+                                    <li><i class="fas fa-check"></i> Alta Taxa de Sucesso</li>
+                                    <li><i class="fas fa-check"></i> Processo Digital</li>
+                                </ul>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Contestar Multa
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsApp('pontos')">
+                                <div class="icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <h3>Redução de Pontos</h3>
+                                <p>Reduza pontos na carteira com recursos estratégicos e fundamentados</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-chart-line"></i> Estratégia Inteligente
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Análise de Pontuação</li>
+                                    <li><i class="fas fa-check"></i> Recursos Estratégicos</li>
+                                    <li><i class="fas fa-check"></i> Planejamento Personalizado</li>
+                                    <li><i class="fas fa-check"></i> Acompanhamento Mensal</li>
+                                </ul>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-minus-circle"></i>
+                                    Reduzir Pontos
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsApp('consulta')">
+                                <div class="icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3>Consultoria Especializada</h3>
+                                <p>Consultoria especializada em direito de trânsito com especialistas renomados</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-comments"></i> Consultoria Premium
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Especialistas Renomados</li>
+                                    <li><i class="fas fa-check"></i> Orientação Personalizada</li>
+                                    <li><i class="fas fa-check"></i> Análise de Processos</li>
+                                    <li><i class="fas fa-check"></i> Suporte Prioritário</li>
+                                </ul>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-phone"></i>
+                                    Falar com Especialista
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsApp('defesa-previa')">
+                                <div class="icon">
+                                    <i class="fas fa-shield-virus"></i>
+                                </div>
+                                <h3>Defesa Prévia</h3>
+                                <p>Elaboração de defesa prévia profissional antes da aplicação da penalidade</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-clock"></i> Resposta Rápida
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Defesa Técnica</li>
+                                    <li><i class="fas fa-check"></i> Documentação Completa</li>
+                                    <li><i class="fas fa-check"></i> Prazo Garantido</li>
+                                    <li><i class="fas fa-check"></i> Alta Eficácia</li>
+                                </ul>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-medical"></i>
+                                    Elaborar Defesa
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cursos Detran Section -->
+                    <div class="service-section" id="cursos">
+                        <div class="cards-grid">
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('reciclagem-infratores')">
+                                <div class="icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <h3>Reciclagem para Condutores Infratores</h3>
+                                <p>Curso obrigatório para condutores que atingiram 20 pontos na CNH</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-certificate"></i> Certificado Detran
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> 30 Horas/Aula</li>
+                                    <li><i class="fas fa-check"></i> 100% Online</li>
+                                    <li><i class="fas fa-check"></i> Certificado Válido</li>
+                                    <li><i class="fas fa-check"></i> Aprovado pelo Detran</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-play"></i>
+                                    Iniciar Curso
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('atualizacao-renovacao')">
+                                <div class="icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <h3>Atualização para Renovação da CNH</h3>
+                                <p>Curso de atualização obrigatório para renovação da carteira</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-clock"></i> 15 Horas/Aula
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Legislação Atualizada</li>
+                                    <li><i class="fas fa-check"></i> Direção Defensiva</li>
+                                    <li><i class="fas fa-check"></i> Primeiros Socorros</li>
+                                    <li><i class="fas fa-check"></i> Meio Ambiente</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-redo"></i>
+                                    Renovar CNH
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('transporte-passageiros')">
+                                <div class="icon">
+                                    <i class="fas fa-bus"></i>
+                                </div>
+                                <h3>Transporte Coletivo de Passageiros</h3>
+                                <p>Capacitação para condutores de ônibus e micro-ônibus</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-users"></i> Categoria D
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Curso Especializado</li>
+                                    <li><i class="fas fa-check"></i> Técnicas de Condução</li>
+                                    <li><i class="fas fa-check"></i> Atendimento ao Público</li>
+                                    <li><i class="fas fa-check"></i> Segurança no Transporte</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-bus-alt"></i>
+                                    Capacitar
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('transporte-escolares')">
+                                <div class="icon">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <h3>Transporte de Escolares</h3>
+                                <p>Capacitação específica para condutores de transporte escolar</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-child"></i> Proteção Infantil
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Segurança Escolar</li>
+                                    <li><i class="fas fa-check"></i> Primeiros Socorros</li>
+                                    <li><i class="fas fa-check"></i> Psicologia Infantil</li>
+                                    <li><i class="fas fa-check"></i> Legislação Específica</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Especializar
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('veiculos-emergencia')">
+                                <div class="icon">
+                                    <i class="fas fa-ambulance"></i>
+                                </div>
+                                <h3>Veículos de Emergência</h3>
+                                <p>Capacitação para condutores de ambulâncias e veículos de emergência</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-heartbeat"></i> Emergência Médica
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Condução de Emergência</li>
+                                    <li><i class="fas fa-check"></i> Primeiros Socorros Avançados</li>
+                                    <li><i class="fas fa-check"></i> Equipamentos Médicos</li>
+                                    <li><i class="fas fa-check"></i> Protocolos de Urgência</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-plus-square"></i>
+                                    Capacitar
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('produtos-perigosos')">
+                                <div class="icon">
+                                    <i class="fas fa-radiation"></i>
+                                </div>
+                                <h3>Transporte de Produtos Perigosos</h3>
+                                <p>Curso MOPP para transporte de materiais perigosos</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-warning"></i> Curso MOPP
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Regulamentação MOPP</li>
+                                    <li><i class="fas fa-check"></i> Manuseio Seguro</li>
+                                    <li><i class="fas fa-check"></i> Prevenção de Acidentes</li>
+                                    <li><i class="fas fa-check"></i> Documentação Específica</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Habilitar MOPP
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('cargas-indivisiveis')">
+                                <div class="icon">
+                                    <i class="fas fa-truck-loading"></i>
+                                </div>
+                                <h3>Transporte de Cargas Indivisíveis</h3>
+                                <p>Capacitação para transporte de cargas especiais e indivisíveis</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-weight-hanging"></i> Cargas Especiais
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Planejamento de Rotas</li>
+                                    <li><i class="fas fa-check"></i> Segurança no Transporte</li>
+                                    <li><i class="fas fa-check"></i> Documentação AET</li>
+                                    <li><i class="fas fa-check"></i> Regulamentação Específica</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-truck"></i>
+                                    Especializar
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('motofrete')">
+                                <div class="icon">
+                                    <i class="fas fa-motorcycle"></i>
+                                </div>
+                                <h3>Motofrete e Mototáxi</h3>
+                                <p>Curso para condutores de mototáxi e motofrete profissional</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-shipping-fast"></i> Delivery Profissional
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Condução Defensiva</li>
+                                    <li><i class="fas fa-check"></i> Legislação Específica</li>
+                                    <li><i class="fas fa-check"></i> Primeiros Socorros</li>
+                                    <li><i class="fas fa-check"></i> Relacionamento com Cliente</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-id-badge"></i>
+                                    Profissionalizar
+                                </button>
+                            </div>
+
+                            <div class="modalidade-card" onclick="abrirWhatsAppCurso('instrutor-cfc')">
+                                <div class="icon">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <h3>Instrutor de Centro de Formação</h3>
+                                <p>Formação para instrutores de autoescola e CFC</p>
+                                <div class="questions-count">
+                                    <i class="fas fa-teaching"></i> Formação Pedagógica
+                                </div>
+                                <ul class="card-features">
+                                    <li><i class="fas fa-check"></i> Didática Aplicada</li>
+                                    <li><i class="fas fa-check"></i> Psicologia da Aprendizagem</li>
+                                    <li><i class="fas fa-check"></i> Técnicas de Ensino</li>
+                                    <li><i class="fas fa-check"></i> Avaliação Pedagógica</li>
+                                </ul>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-certificate"></i>
+                                    Formar Instrutor
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page 2: Quiz Premium -->
+    <div id="quizPage" class="page">
+        <div class="container">
+            <div class="quiz-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="quiz-header">
+                    <div class="quiz-counter">
+                        Questão <span id="currentQuestion">1</span> de <span id="totalQuestions">5</span>
+                    </div>
+                    <div class="quiz-timer">
+                        <i class="fas fa-stopwatch"></i>
+                        <span id="timer">00:00</span>
+                    </div>
+                    <div class="score-display">
+                        <i class="fas fa-target"></i>
+                        Acertos: <span id="currentScore">0</span>/5
+                    </div>
+                </div>
+
+                <div class="question-container">
+                    <div class="question" id="questionText">
+                        Carregando questão inteligente...
+                    </div>
+                    
+                    <ul class="answers" id="answersContainer">
+                        <!-- Answers will be loaded here -->
+                    </ul>
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn" id="nextButton" onclick="proximaQuestao()" disabled>
+                        <i class="fas fa-arrow-right"></i>
+                        Próxima Questão
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Results + Premium Offer -->
+    <div id="resultsPage" class="page">
+        <div class="container">
+            <div class="results-container">
+                <div class="result-score fade-in-up">
+                    <h2 style="margin-bottom: 2rem; color: var(--gray-900); font-family: 'Space Grotesk', sans-serif; font-weight: 800;">
+                        Seu Resultado Inteligente
+                    </h2>
+                    <div class="score-circle" id="scoreCircle">
+                        <div class="score-text" id="scoreText">0/5</div>
+                    </div>
+                    <div class="performance-message" id="performanceMessage">
+                        Analisando seu desempenho com IA...
+                    </div>
+                </div>
+
+                <div class="blocked-section">
+                    <div class="blocked-content">
+                        <div class="blocked-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3 class="blocked-title">Teste Gratuito Concluído com Sucesso!</h3>
+                        <p class="blocked-text">
+                            Nossa IA analisou seu desempenho e criou um plano personalizado para sua aprovação. 
+                            Para acessar questões ilimitadas e recursos premium...
+                        </p>
+                        <button class="btn blocked-btn" disabled>
+                            <i class="fas fa-infinity"></i>
+                            Questões Ilimitadas - DESBLOQUEIE AGORA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Offer Section -->
+        <section class="offer-section">
+            <div class="container">
+                <div class="offer-content">
+                    <h2 class="offer-title">
+                        🚀 ACESSO VITALÍCIO AO ECOSSISTEMA COMPLETO
+                    </h2>
+                    <p class="offer-subtitle">
+                        A plataforma mais avançada do Brasil com IA, simuladores 3D, recursos judiciais e muito mais
+                    </p>
+
+                    <div class="pricing-card">
+                        <div class="pricing-badge">
+                            🔥 OFERTA LIMITADA - APENAS HOJE
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div class="old-price">De R$ 497,90</div>
+                            <div class="new-price">R$ 97<span class="price-period">,90</span></div>
+                            <p style="color: var(--gray-600); margin-bottom: 2rem;">
+                                <strong>Acesso vitalício</strong> • Sem mensalidades • Para sempre
+                            </p>
+                        </div>
+
+                        <div class="countdown-timer">
+                            <div style="text-align: center;">
+                                ⚡ Esta oferta expira em:
+                                <div class="countdown-numbers" id="countdownNumbers">
+                                    <div class="countdown-item">
+                                        <span class="countdown-number" id="hours">23</span>
+                                        <span class="countdown-label">Horas</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span class="countdown-number" id="minutes">59</span>
+                                        <span class="countdown-label">Min</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span class="countdown-number" id="seconds">59</span>
+                                        <span class="countdown-label">Seg</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="urgency-alert">
+                            🔥 Apenas <span id="remainingSpots">47</span> vagas restantes para esta turma especial!
+                        </div>
+
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="feature-text">IA Adaptativa Personalizada</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-infinity"></i>
+                                </div>
+                                <div class="feature-text">Questões Ilimitadas</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-vr-cardboard"></i>
+                                </div>
+                                <div class="feature-text">Simuladores 3D</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="feature-text">Recursos Judiciais</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="feature-text">Cursos Certificados</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="feature-text">Suporte Premium 24/7</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="feature-text">App Mobile Exclusivo</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-check"></i>
+                                </div>
+                                <div class="feature-text">Garantia de Aprovação</div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-success glow-success" style="width: 100%; padding: 20px; font-size: 1.3rem; font-weight: 800;" onclick="finalizarCompra()">
+                            <i class="fas fa-rocket"></i>
+                            GARANTIR MEU ACESSO VITALÍCIO AGORA
+                        </button>
+
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <p style="color: var(--gray-600); font-size: 0.9rem; margin-bottom: 1rem;">
+                                <i class="fas fa-shield-alt" style="color: var(--success);"></i>
+                                Garantia incondicional de 30 dias • Pagamento 100% seguro
+                            </p>
+                            <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                                <i class="fab fa-cc-visa" style="font-size: 2rem; color: var(--primary);"></i>
+                                <i class="fab fa-cc-mastercard" style="font-size: 2rem; color: var(--danger);"></i>
+                                <i class="fab fa-cc-paypal" style="font-size: 2rem; color: var(--accent);"></i>
+                                <i class="fab fa-pix" style="font-size: 2rem; color: var(--success);"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credibility Premium Section -->
+        <section class="credibility">
+            <div class="container">
+                <h2 class="section-title">Resultados Comprovados por Milhares</h2>
+                <p class="section-subtitle">A confiança de mais de 25 mil aprovados em todo o Brasil</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card scale-in">
+                        <span class="stat-number">97.8%</span>
+                        <p class="stat-label">Taxa de Aprovação</p>
+                    </div>
+                    <div class="stat-card scale-in">
+                        <span class="stat-number">25k+</span>
+                        <p class="stat-label">Aprovados em 2024</p>
+                    </div>
+                    <div class="stat-card scale-in">
+                        <span class="stat-number">2M+</span>
+                        <p class="stat-label">Questões Resolvidas</p>
+                    </div>
+                    <div class="stat-card scale-in">
+                        <span class="stat-number">4.9/5</span>
+                        <p class="stat-label">Satisfação dos Usuários</p>
+                    </div>
+                </div>
+
+                <div class="testimonials">
+                    <h3 style="text-align: center; margin-bottom: 3rem; font-size: 2rem; color: var(--gray-900);">
+                        O que nossos alunos dizem
+                    </h3>
+                    <div class="testimonials-grid">
+                        <div class="testimonial fade-in-up">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "Incrível! A IA realmente personalizou as questões para mim. Passei de primeira depois de 3 tentativas com outros métodos. O investimento valeu cada centavo!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">JS</div>
+                                    <div class="testimonial-info">
+                                        <h4>João Silva</h4>
+                                        <p>Aprovado em São Paulo - SP</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial fade-in-up">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "Os recursos judiciais me salvaram! Consegui reverter uma suspensão injusta e ainda aprendi muito sobre meus direitos. Equipe fantástica!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">MS</div>
+                                    <div class="testimonial-info">
+                                        <h4>Maria Santos</h4>
+                                        <p>Recursos Jurídicos - RJ</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial fade-in-up">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "A plataforma é de outro mundo! Simuladores 3D, IA, cursos... Parece que estou no futuro. Aprovação garantida mesmo!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">CO</div>
+                                    <div class="testimonial-info">
+                                        <h4>Carlos Oliveira</h4>
+                                        <p>Primeira CNH - MG</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial fade-in-up">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "Estava desanimada após várias reprovações. A IA identificou exatamente minhas dificuldades e criou um plano personalizado. Passei com 95% de acertos!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">AF</div>
+                                    <div class="testimonial-info">
+                                        <h4>Ana Fernandes</h4>
+                                        <p>Renovação - RS</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial fade-in-up">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "O suporte é excepcional! Qualquer dúvida é respondida rapidamente. Senti-me acompanhado durante todo o processo. Recomendo demais!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">PS</div>
+                                    <div class="testimonial-info">
+                                        <h4>Pedro Souza</h4>
+                                        <p>Mudança de Categoria - PR</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial fade-in-up">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "Como PCD, sempre tive dificuldades. Aqui encontrei total acessibilidade e suporte especializado. Me senti verdadeiramente incluído!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">LR</div>
+                                    <div class="testimonial-info">
+                                        <h4>Lucas Rodrigues</h4>
+                                        <p>CNH Especial - SC</p>
+                                    </div>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Premium Popup Notifications -->
+    <div class="popup-notification" id="popupNotification">
+        <div class="popup-header">
+            <div class="popup-avatar" id="popupAvatar">JS</div>
+            <div class="popup-content">
+                <h4 id="popupName">João Silva</h4>
+                <p id="popupAction">acabou de se inscrever!</p>
+            </div>
+        </div>
+        <div class="popup-time" id="popupTime">agora mesmo</div>
+    </div>
+
+    <script>
+        // VARIÁVEIS GLOBAIS PREMIUM
+        let questaoAtual = 0;
+        let pontuacao = 0;
+        let modalidadeSelecionada = '';
+        let servicoSelecionado = 'simulados';
+        let tempoInicio = Date.now();
+        let questoes = [];
+        let respostasUsuario = [];
+        let timerInterval;
+        let countdownInterval;
+
+        // BANCO DE QUESTÕES PREMIUM COM IA
+        const bancosQuestoes = {
+            'primeira-cnh': [
+                {
+                    pergunta: "Em uma situação de aquaplanagem em alta velocidade, qual é a sequência correta de ações que o condutor deve tomar?",
+                    alternativas: [
+                        "Frear imediatamente e virar o volante para recuperar o controle",
+                        "Tirar o pé do acelerador suavemente, manter o volante firme e aguardar recuperar a aderência",
+                        "Acelerar para sair rapidamente da poça d'água",
+                        "Frear e acelerar alternadamente para recuperar o controle"
+                    ],
+                    correta: 1,
+                    explicacao: "Na aquaplanagem, o veículo perde contato com o solo. Deve-se tirar o pé do acelerador suavemente e manter o volante firme até recuperar a aderência. Frear ou acelerar pode piorar a situação.",
+                    nivel: "avancado",
+                    categoria: "seguranca"
+                },
+                {
+                    pergunta: "Qual é a distância de seguimento segura em rodovia para um veículo trafegando a 100 km/h em condições normais?",
+                    alternativas: [
+                        "50 metros",
+                        "80 metros", 
+                        "100 metros",
+                        "120 metros"
+                    ],
+                    correta: 2,
+                    explicacao: "A regra dos 2 metros por cada 10 km/h resulta em 100 metros de distância de seguimento para 100 km/h (100÷10×2=20, mas considerando o tempo de reação, mantém-se 100 metros).",
+                    nivel: "intermediario",
+                    categoria: "velocidade"
+                },
+                {
+                    pergunta: "Em caso de atropelamento com vítima inconsciente, qual é a primeira ação do socorrista?",
+                    alternativas: [
+                        "Verificar se a vítima está respirando",
+                        "Mover a vítima para local seguro",
+                        "Verificar se há responsividade e chamar ajuda",
+                        "Iniciar massagem cardíaca imediatamente"
+                    ],
+                    correta: 2,
+                    explicacao: "Primeiro deve-se verificar a responsividade (chamar a vítima) e pedir ajuda (ligar 192/193). Só depois verificar respiração e sinais vitais, sem mover a vítima desnecessariamente.",
+                    nivel: "avancado",
+                    categoria: "primeiros-socorros"
+                },
+                {
+                    pergunta: "O que significa a placa R-19 (círculo vermelho com fundo branco e seta para a direita)?",
+                    alternativas: [
+                        "Proibido virar à direita",
+                        "Sentido obrigatório à direita", 
+                        "Curva acentuada à direita",
+                        "Preferencial à direita"
+                    ],
+                    correta: 1,
+                    explicacao: "A placa R-19 indica 'Sentido de circulação da via/pista'. Quando mostra seta para direita, significa que é obrigatório seguir naquela direção.",
+                    nivel: "basico",
+                    categoria: "sinalizacao"
+                },
+                {
+                    pergunta: "Dirigir sob influência de álcool com concentração igual ou superior a 0,34 mg/L no ar alveolar constitui:",
+                    alternativas: [
+                        "Infração gravíssima com multa",
+                        "Crime previsto no Código Penal",
+                        "Infração grave com advertência",
+                        "Infração média com curso de reciclagem"
+                    ],
+                    correta: 1,
+                    explicacao: "Concentração igual ou superior a 0,34 mg/L no ar alveolar (ou 0,6 g/L no sangue) constitui crime de embriaguez ao volante, previsto no art. 306 do CTB, com pena de prisão.",
+                    nivel: "avancado",
+                    categoria: "legislacao"
+                },
+                {
+                    pergunta: "Em vias urbanas com ciclofaixa, qual é a velocidade máxima permitida para veículos automotores?",
+                    alternativas: [
+                        "30 km/h",
+                        "40 km/h",
+                        "50 km/h", 
+                        "60 km/h"
+                    ],
+                    correta: 1,
+                    explicacao: "Em vias com ciclofaixa, a velocidade máxima para veículos automotores é reduzida para 40 km/h, visando a segurança dos ciclistas que compartilham o espaço viário.",
+                    nivel: "intermediario",
+                    categoria: "velocidade"
+                },
+                {
+                    pergunta: "O condutor que for flagrado utilizando telefone celular ao volante receberá:",
+                    alternativas: [
+                        "Multa grave e 5 pontos na CNH",
+                        "Multa gravíssima e 7 pontos na CNH",
+                        "Multa média e 4 pontos na CNH",
+                        "Advertência por escrito"
+                    ],
+                    correta: 1,
+                    explicacao: "Usar telefone celular ao volante é infração gravíssima, com multa de R$ 293,47 e 7 pontos na CNH, podendo causar retenção do veículo até cessação do fator de risco.",
+                    nivel: "basico",
+                    categoria: "infrações"
+                }
+            ],
+            'renovacao': [
+                {
+                    pergunta: "Para renovação da CNH, o exame toxicológico é obrigatório para condutores de quais categorias?",
+                    alternativas: [
+                        "Apenas categoria D",
+                        "Categorias C, D e E",
+                        "Todas as categorias",
+                        "Apenas categorias D e E"
+                    ],
+                    correta: 1,
+                    explicacao: "O exame toxicológico é obrigatório para renovação da CNH nas categorias C, D e E (veículos de carga e transporte de passageiros), conforme Lei 13.103/2015.",
+                    nivel: "intermediario",
+                    categoria: "renovacao"
+                },
+                {
+                    pergunta: "A CNH deve ser renovada a cada quantos anos para condutores com idade superior a 65 anos?",
+                    alternativas: [
+                        "2 anos",
+                        "3 anos",
+                        "4 anos",
+                        "5 anos"
+                    ],
+                    correta: 1,
+                    explicacao: "Para condutores com mais de 65 anos, a CNH deve ser renovada a cada 3 anos, com exames médico e psicotécnico mais rigorosos.",
+                    nivel: "basico",
+                    categoria: "renovacao"
+                }
+            ],
+            'reciclagem': [
+                {
+                    pergunta: "O curso de reciclagem para condutores infratores tem duração mínima de:",
+                    alternativas: [
+                        "20 horas",
+                        "30 horas",
+                        "40 horas",
+                        "50 horas"
+                    ],
+                    correta: 1,
+                    explicacao: "O curso de reciclagem tem duração mínima de 30 horas, divididas em aulas teóricas sobre legislação, direção defensiva, primeiros socorros e meio ambiente.",
+                    nivel: "basico",
+                    categoria: "reciclagem"
+                }
+            ]
+        };
+
+        // INICIALIZAÇÃO PREMIUM
+        document.addEventListener('DOMContentLoaded', function() {
+            inicializarParticulas();
+            inicializarScrollAnimations();
+            inicializarServiceTabs();
+            inicializarHeader();
+            setTimeout(iniciarSocialProof, 2000);
+        });
+
+        // SISTEMA DE PARTÍCULAS
+        function inicializarParticulas() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 50;
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // HEADER SCROLL EFFECT
+        function inicializarHeader() {
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // SERVICE TABS
+        function inicializarServiceTabs() {
+            const tabs = document.querySelectorAll('.service-tab');
+            const sections = document.querySelectorAll('.service-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const service = tab.dataset.service;
+                    
+                    // Remove active class from all tabs and sections
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding section
+                    tab.classList.add('active');
+                    document.getElementById(service).classList.add('active');
+                    
+                    servicoSelecionado = service;
+                });
+            });
+        }
+
+        // SCROLL ANIMATIONS
+        function inicializarScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animation classes
+            document.querySelectorAll('.fade-in-up, .scale-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // FUNÇÕES DE QUIZ PREMIUM
+        function iniciarQuiz(modalidade) {
+            modalidadeSelecionada = modalidade;
+            questaoAtual = 0;
+            pontuacao = 0;
+            tempoInicio = Date.now();
+            respostasUsuario = [];
+
+            // Mostrar loading premium
+            mostrarLoadingPremium();
+
+            setTimeout(() => {
+                // Pegar questões com IA (simulação)
+                const todasQuestoes = bancosQuestoes[modalidade] || bancosQuestoes['primeira-cnh'];
+                questoes = embaralharComIA(todasQuestoes).slice(0, 5);
+
+                mostrarPagina('quizPage');
+                carregarQuestao();
+                iniciarTimer();
+            }, 2500);
+        }
+
+        function mostrarLoadingPremium() {
+            const container = document.querySelector('.container');
+            const loading = document.createElement('div');
+            loading.className = 'loading';
+            loading.innerHTML = `
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Preparando seu teste personalizado com IA...</p>
+                <div class="loading-progress">
+                    <div class="loading-bar"></div>
+                </div>
+                <p style="margin-top: 1rem; color: var(--gray-500); font-size: 0.9rem;">
+                    Analisando seu perfil • Selecionando questões • Calibrando dificuldade
+                </p>
+            `;
+            container.appendChild(loading);
+
+            setTimeout(() => loading.remove(), 2400);
+        }
+
+        function embaralharComIA(array) {
+            // Simula seleção inteligente de questões baseada em IA
+            const embaralhado = [...array];
+            
+            // Algoritmo Fisher-Yates melhorado
+            for (let i = embaralhado.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [embaralhado[i], embaralhado[j]] = [embaralhado[j], embaralhado[i]];
+            }
+            
+            return embaralhado;
+        }
+
+        function mostrarPagina(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function iniciarTimer() {
+            timerInterval = setInterval(() => {
+                const tempoDecorrido = Math.floor((Date.now() - tempoInicio) / 1000);
+                const minutos = Math.floor(tempoDecorrido / 60).toString().padStart(2, '0');
+                const segundos = (tempoDecorrido % 60).toString().padStart(2, '0');
+                document.getElementById('timer').textContent = `${minutos}:${segundos}`;
+            }, 1000);
+        }
+
+        function carregarQuestao() {
+            const questao = questoes[questaoAtual];
+            
+            // Atualizar progresso com animação
+            const progresso = ((questaoAtual + 1) / questoes.length) * 100;
+            document.getElementById('progressFill').style.width = progresso + '%';
+            
+            // Atualizar contador
+            document.getElementById('currentQuestion').textContent = questaoAtual + 1;
+            document.getElementById('totalQuestions').textContent = questoes.length;
+            
+            // Carregar pergunta com animação
+            const questionContainer = document.getElementById('questionText');
+            questionContainer.style.opacity = '0';
+            questionContainer.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                questionContainer.textContent = questao.pergunta;
+                questionContainer.style.opacity = '1';
+                questionContainer.style.transform = 'translateY(0)';
+                questionContainer.style.transition = 'all 0.5s ease';
+            }, 200);
+            
+            // Carregar alternativas com animação sequencial
+            const container = document.getElementById('answersContainer');
+            container.innerHTML = '';
+            
+            questao.alternativas.forEach((alternativa, index) => {
+                const li = document.createElement('li');
+                li.className = 'answer';
+                li.style.opacity = '0';
+                li.style.transform = 'translateX(-30px)';
+                li.innerHTML = `
+                    <label>
+                        <input type="radio" name="answer" value="${index}" style="margin-right: 15px;">
+                        ${alternativa}
+                    </label>
+                `;
+                li.onclick = () => selecionarResposta(index, li);
+                container.appendChild(li);
+                
+                // Animação sequencial
+                setTimeout(() => {
+                    li.style.opacity = '1';
+                    li.style.transform = 'translateX(0)';
+                    li.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                }, 300 + (index * 100));
+            });
+            
+            // Resetar botão
+            document.getElementById('nextButton').disabled = true;
+        }
+
+        function selecionarResposta(indice, elemento) {
+            // Remover seleções anteriores
+            document.querySelectorAll('.answer').forEach(el => {
+                el.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            // Marcar seleção com efeito
+            elemento.classList.add('selected');
+            elemento.style.transform = 'translateX(8px) scale(1.02)';
+            
+            // Verificar se está correta
+            const questao = questoes[questaoAtual];
+            const estaCorreta = indice === questao.correta;
+            
+            setTimeout(() => {
+                if (estaCorreta) {
+                    elemento.classList.add('correct');
+                    pontuacao++;
+                    document.getElementById('currentScore').textContent = pontuacao;
+                    
+                    // Efeito de sucesso
+                    elemento.style.boxShadow = '0 0 20px rgba(16, 185, 129, 0.5)';
+                } else {
+                    elemento.classList.add('incorrect');
+                    // Mostrar resposta correta
+                    const respostaCorreta = document.querySelectorAll('.answer')[questao.correta];
+                    respostaCorreta.classList.add('correct');
+                    respostaCorreta.style.boxShadow = '0 0 20px rgba(16, 185, 129, 0.5)';
+                }
+                
+                // Armazenar resposta
+                respostasUsuario[questaoAtual] = {
+                    selecionada: indice,
+                    correta: questao.correta,
+                    estaCorreta: estaCorreta
+                };
+                
+                // Mostrar explicação premium
+                mostrarExplicacao(questao.explicacao);
+                
+            }, 500);
+        }
+
+        function mostrarExplicacao(explicacao) {
+            const container = document.querySelector('.question-container');
+            const explicacaoDiv = document.createElement('div');
+            explicacaoDiv.style.cssText = `
+                background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+                padding: 2rem;
+                border-radius: 16px;
+                margin-top: 2rem;
+                border-left: 4px solid var(--primary);
+                font-weight: 500;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: var(--shadow-md);
+            `;
+            explicacaoDiv.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 40px; height: 40px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <strong style="color: var(--gray-900); font-size: 1.1rem;">Explicação Detalhada:</strong>
+                </div>
+                <p style="color: var(--gray-700); line-height: 1.6;">${explicacao}</p>
+            `;
+            
+            container.appendChild(explicacaoDiv);
+            
+            // Animar entrada
+            setTimeout(() => {
+                explicacaoDiv.style.opacity = '1';
+                explicacaoDiv.style.transform = 'translateY(0)';
+            }, 100);
+            
+            // Habilitar botão próxima após um tempo
+            setTimeout(() => {
+                document.getElementById('nextButton').disabled = false;
+                document.getElementById('nextButton').classList.add('glow');
+            }, 1500);
+        }
+
+        function proximaQuestao() {
+            questaoAtual++;
+            
+            if (questaoAtual < questoes.length) {
+                // Limpar explicação anterior
+                const explicacao = document.querySelector('.question-container > div:last-child');
+                if (explicacao && explicacao.innerHTML.includes('Explicação')) {
+                    explicacao.remove();
+                }
+                carregarQuestao();
+            } else {
+                clearInterval(timerInterval);
+                mostrarResultados();
+            }
+        }
+
+        function mostrarResultados() {
+            mostrarPagina('resultsPage');
+            
+            // Calcular porcentagem
+            const porcentagem = (pontuacao / questoes.length) * 100;
+            const anguloScore = (porcentagem / 100) * 360;
+            
+            // Atualizar display do score com animação
+            setTimeout(() => {
+                document.getElementById('scoreText').textContent = `${pontuacao}/${questoes.length}`;
+                document.getElementById('scoreCircle').style.setProperty('--score-angle', anguloScore + 'deg');
+            }, 500);
+            
+            // Mensagem de performance personalizada
+            let mensagem = '';
+            let corMensagem = '';
+            
+            if (pontuacao <= 2) {
+                mensagem = "Sua IA personalizada foi calibrada! Você precisa de mais prática para garantir 100% de aprovação 🎯";
+                corMensagem = 'var(--warning)';
+            } else if (pontuacao === 3) {
+                mensagem = "Bom desempenho! A IA identificou seus pontos fortes. Com mais treino você será imparável! 🚀";
+                corMensagem = 'var(--secondary)';
+            } else if (pontuacao === 4) {
+                mensagem = "Excelente! Você tem grande potencial. Nossa IA vai te levar à aprovação garantida! ⭐";
+                corMensagem = 'var(--primary)';
+            } else {
+                mensagem = "PERFEITO! Você está pronto para a aprovação. Nossa IA confirma: você é um futuro aprovado! 🏆";
+                corMensagem = 'var(--success)';
+            }
+            
+            setTimeout(() => {
+                document.getElementById('performanceMessage').innerHTML = mensagem;
+                document.getElementById('performanceMessage').style.color = corMensagem;
+            }, 1000);
+            
+            // Iniciar sistemas premium
+            iniciarCountdownPremium();
+            setTimeout(() => iniciarSocialProof(), 2000);
+        }
+
+        // COUNTDOWN PREMIUM
+        function iniciarCountdownPremium() {
+            const agora = new Date();
+            const meianoite = new Date();
+            meianoite.setHours(24, 0, 0, 0);
+            
+            countdownInterval = setInterval(() => {
+                const agora = new Date();
+                const diff = meianoite - agora;
+                
+                const horas = Math.floor(diff / (1000 * 60 * 60));
+                const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('hours').textContent = horas.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutos.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = segundos.toString().padStart(2, '0');
+            }, 1000);
+            
+            // Diminuir vagas dinamicamente
+            let vagas = 47;
+            const vagasElement = document.getElementById('remainingSpots');
+            
+            setInterval(() => {
+                if (vagas > 15 && Math.random() < 0.4) {
+                    vagas--;
+                    vagasElement.textContent = vagas;
+                    vagasElement.style.animation = 'pulse 0.5s ease';
+                    setTimeout(() => {
+                        vagasElement.style.animation = '';
+                    }, 500);
+                }
+            }, 12000 + Math.random() * 8000);
+        }
+
+        // SOCIAL PROOF PREMIUM
+        function iniciarSocialProof() {
+            const nomes = [
+                { nome: 'João Silva', cidade: 'São Paulo - SP', avatar: 'JS' },
+                { nome: 'Maria Santos', cidade: 'Rio de Janeiro - RJ', avatar: 'MS' },
+                { nome: 'Carlos Oliveira', cidade: 'Belo Horizonte - MG', avatar: 'CO' },
+                { nome: 'Ana Costa', cidade: 'Porto Alegre - RS', avatar: 'AC' },
+                { nome: 'Pedro Souza', cidade: 'Curitiba - PR', avatar: 'PS' },
+                { nome: 'Lucia Fernandes', cidade: 'Salvador - BA', avatar: 'LF' },
+                { nome: 'Roberto Lima', cidade: 'Fortaleza - CE', avatar: 'RL' },
+                { nome: 'Patricia Alves', cidade: 'Brasília - DF', avatar: 'PA' },
+                { nome: 'Fernando Castro', cidade: 'Recife - PE', avatar: 'FC' },
+                { nome: 'Juliana Rocha', cidade: 'Goiânia - GO', avatar: 'JR' }
+            ];
+            
+            const acoes = [
+                'acabou de garantir acesso vitalício!',
+                'se inscreveu no plano premium!',
+                'acabou de aprovar no simulado!',
+                'garantiu sua vaga agora mesmo!',
+                'começou seu curso de reciclagem!',
+                'iniciou recurso de multa!',
+                'contratou consultoria jurídica!'
+            ];
+            
+            function mostrarNotificacao() {
+                const pessoa = nomes[Math.floor(Math.random() * nomes.length)];
+                const acao = acoes[Math.floor(Math.random() * acoes.length)];
+                
+                const popup = document.getElementById('popupNotification');
+                
+                document.getElementById('popupAvatar').textContent = pessoa.avatar;
+                document.getElementById('popupName').textContent = pessoa.nome;
+                document.getElementById('popupAction').textContent = acao;
+                document.getElementById('popupTime').textContent = 'agora mesmo';
+                
+                popup.classList.add('show');
+                
+                setTimeout(() => {
+                    popup.classList.remove('show');
+                }, 5000);
+            }
+            
+            // Primeira notificação
+            setTimeout(mostrarNotificacao, 3000);
+            
+            // Notificações periódicas
+            setInterval(() => {
+                if (Math.random() < 0.8) {
+                    mostrarNotificacao();
+                }
+            }, 8000 + Math.random() * 7000);
+        }
+
+        // FUNÇÕES DE WHATSAPP
+        function abrirWhatsApp(tipo) {
+            const numero = '5547992862001';
+            let mensagem = '';
+            
+            switch(tipo) {
+                case 'suspensao':
+                    mensagem = `Olá! Gostaria de analisar meu caso de *SUSPENSÃO DE CNH*. 
+
+Preciso de ajuda para recorrer da suspensão da minha carteira de habilitação. 
+
+Podem fazer uma análise gratuita do meu caso?`;
+                    break;
+                    
+                case 'cassacao':
+                    mensagem = `Olá! Preciso de ajuda para *REVERTER CASSAÇÃO* da minha CNH.
+
+Minha carteira foi cassada e gostaria de saber as possibilidades de recurso.
+
+Podem analisar meu caso?`;
+                    break;
+                    
+                case 'multa':
+                    mensagem = `Olá! Gostaria de *CONTESTAR UMA MULTA* de trânsito.
+
+Acredito que a multa foi aplicada indevidamente e preciso de ajuda para recorrer.
+
+Podem me ajudar com o recurso?`;
+                    break;
+                    
+                case 'pontos':
+                    mensagem = `Olá! Preciso de ajuda para *REDUZIR PONTOS* na minha CNH.
+
+Estou preocupado com a pontuação na carteira e gostaria de saber as estratégias disponíveis.
+
+Podem me orientar?`;
+                    break;
+                    
+                case 'consulta':
+                    mensagem = `Olá! Gostaria de uma *CONSULTORIA ESPECIALIZADA* em direito de trânsito.
+
+Tenho algumas dúvidas e preciso de orientação profissional sobre meu caso.
+
+Podem me ajudar?`;
+                    break;
+                    
+                case 'defesa-previa':
+                    mensagem = `Olá! Preciso elaborar uma *DEFESA PRÉVIA* para uma infração de trânsito.
+
+Recebi uma notificação e preciso apresentar defesa dentro do prazo.
+
+Podem me ajudar com a elaboração?`;
+                    break;
+                    
+                default:
+                    mensagem = `Olá! Vim através do site SimuladoCNH Pro e gostaria de mais informações sobre os serviços de recursos administrativos.`;
+            }
+            
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        // FUNÇÕES DE WHATSAPP CURSOS
+        function abrirWhatsAppCurso(tipo) {
+            const numero = '5547992862001';
+            let mensagem = '';
+            
+            switch(tipo) {
+                case 'reciclagem-infratores':
+                    mensagem = `Olá! Gostaria de me inscrever no *CURSO DE RECICLAGEM PARA CONDUTORES INFRATORES*.
+
+Preciso fazer o curso obrigatório pois atingi 20 pontos na CNH.
+
+Informações que preciso:
+• Valor do curso
+• Modalidade (online/presencial)
+• Duração e cronograma
+• Documentos necessários
+
+Podem me ajudar?`;
+                    break;
+                    
+                case 'atualizacao-renovacao':
+                    mensagem = `Olá! Preciso fazer o *CURSO DE ATUALIZAÇÃO PARA RENOVAÇÃO DA CNH*.
+
+Minha carteira está próxima do vencimento e preciso do curso obrigatório.
+
+Gostaria de saber:
+• Valor e formas de pagamento
+• Duração (15h/aula)
+• Como funciona o curso online
+• Quando posso começar
+
+Aguardo retorno!`;
+                    break;
+                    
+                case 'transporte-passageiros':
+                    mensagem = `Olá! Tenho interesse no curso de *CAPACITAÇÃO PARA TRANSPORTE COLETIVO DE PASSAGEIROS*.
+
+Quero trabalhar como motorista de ônibus (Categoria D).
+
+Preciso de informações sobre:
+• Requisitos para participar
+• Conteúdo programático
+• Duração e valor
+• Certificação
+
+Podem me orientar?`;
+                    break;
+                    
+                case 'transporte-escolares':
+                    mensagem = `Olá! Gostaria de fazer o curso de *CAPACITAÇÃO PARA TRANSPORTE DE ESCOLARES*.
+
+Tenho interesse em trabalhar com transporte escolar.
+
+Informações necessárias:
+• Pré-requisitos
+• Conteúdo sobre segurança escolar
+• Duração e investimento
+• Certificado válido
+
+Aguardo contato!`;
+                    break;
+                    
+                case 'veiculos-emergencia':
+                    mensagem = `Olá! Preciso do curso de *CAPACITAÇÃO PARA VEÍCULOS DE EMERGÊNCIA*.
+
+Quero trabalhar como motorista de ambulância.
+
+Gostaria de saber:
+• Requisitos para participar
+• Conteúdo sobre primeiros socorros
+• Carga horária e valor
+• Certificação reconhecida
+
+Podem me ajudar?`;
+                    break;
+                    
+                case 'produtos-perigosos':
+                    mensagem = `Olá! Tenho interesse no *CURSO MOPP - TRANSPORTE DE PRODUTOS PERIGOSOS*.
+
+Preciso da habilitação para transportar materiais perigosos.
+
+Informações que preciso:
+• Requisitos (categoria CNH)
+• Conteúdo programático
+• Duração e investimento
+• Validade do certificado
+
+Aguardo retorno!`;
+                    break;
+                    
+                case 'cargas-indivisiveis':
+                    mensagem = `Olá! Gostaria de fazer o curso de *CAPACITAÇÃO PARA TRANSPORTE DE CARGAS INDIVISÍVEIS*.
+
+Quero me especializar em cargas especiais.
+
+Preciso saber:
+• Pré-requisitos
+• Conteúdo sobre AET
+• Duração e valor
+• Documentação necessária
+
+Podem me orientar?`;
+                    break;
+                    
+                case 'motofrete':
+                    mensagem = `Olá! Tenho interesse no curso de *MOTOFRETE E MOTOTÁXI*.
+
+Quero me profissionalizar para delivery e mototáxi.
+
+Gostaria de informações sobre:
+• Requisitos para participar
+• Conteúdo programático
+• Duração e investimento
+• Certificação profissional
+
+Aguardo contato!`;
+                    break;
+                    
+                case 'instrutor-cfc':
+                    mensagem = `Olá! Gostaria de fazer o curso para *INSTRUTOR DE CENTRO DE FORMAÇÃO DE CONDUTORES*.
+
+Tenho interesse em trabalhar como instrutor de autoescola.
+
+Preciso de informações sobre:
+• Requisitos e pré-requisitos
+• Formação pedagógica
+• Duração e valor do curso
+• Registro profissional
+
+Podem me ajudar?`;
+                    break;
+                    
+                default:
+                    mensagem = `Olá! Vim através do site SimuladoCNH Pro e gostaria de mais informações sobre os Cursos Detran disponíveis.`;
+            }
+            
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        function finalizarCompra() {
+            // Efeito visual de compra
+            const btn = event.target;
+            btn.style.transform = 'scale(0.95)';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+            
+            setTimeout(() => {
+                alert('🎉 PARABÉNS! Compra realizada com sucesso!\n\n' +
+                      '✅ Acesso vitalício liberado\n' +
+                      '✅ Login e senha enviados por email\n' +
+                      '✅ Suporte premium ativado\n' +
+                      '✅ Garantia de 30 dias\n\n' +
+                      '🚀 Bem-vindo ao futuro da sua aprovação!\n\n' +
+                      'Este é um projeto demonstrativo de alta qualidade.');
+                
+                btn.style.transform = 'scale(1)';
+                btn.innerHTML = '<i class="fas fa-check"></i> COMPRA REALIZADA!';
+                btn.style.background = 'var(--gradient-success)';
+            }, 2000);
+        }
+
+        // EFEITOS VISUAIS PREMIUM (CORRIGIDO)
+        document.addEventListener('mousemove', (e) => {
+            // Efeito parallax sutil nos cards - CORRIGIDO para não acumular
+            const cards = document.querySelectorAll('.modalidade-card');
+            const x = (e.clientX / window.innerWidth - 0.5) * 20; // Limitado a ±10px
+            const y = (e.clientY / window.innerHeight - 0.5) * 20; // Limitado a ±10px
+            
+            cards.forEach((card, index) => {
+                const speed = (index % 3 + 1) * 0.3; // Reduzido para ser mais sutil
+                const moveX = x * speed;
+                const moveY = y * speed;
+                
+                // Usar transform sem acumular
+                card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+
+        // Reset do parallax quando o mouse sair da tela
+        document.addEventListener('mouseleave', () => {
+            const cards = document.querySelectorAll('.modalidade-card');
+            cards.forEach(card => {
+                card.style.transform = 'translate(0px, 0px)';
+                card.style.transition = 'transform 0.5s ease';
+            });
+        });
+
+        // Limpar transição após reset
+        document.addEventListener('mouseenter', () => {
+            const cards = document.querySelectorAll('.modalidade-card');
+            cards.forEach(card => {
+                card.style.transition = '';
+            });
+        });
+
+        // Adicionar animações de hover premium (CORRIGIDO)
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                if (!this.disabled) {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                    this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                }
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                if (!this.disabled) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        });
+
+        // Efeito de digitação no hero
+        function iniciarEfeitoDigitacao() {
+            const texto = "A Revolução da Sua Aprovação na CNH";
+            const elemento = document.querySelector('.hero h1');
+            let i = 0;
+            
+            elemento.textContent = '';
+            
+            const timer = setInterval(() => {
+                if (i < texto.length) {
+                    elemento.textContent += texto.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, 100);
+        }
+
+        // Inicializar efeitos quando a página carregar
+        window.addEventListener('load', () => {
+            setTimeout(iniciarEfeitoDigitacao, 1000);
+        });
+    </script>
+</body>
+</html>
