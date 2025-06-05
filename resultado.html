@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔮 Tarot Revelation</title>
+    <title>🔮 Sua Leitura Personalizada - Revelação Tarot</title>
     
-    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,22 +17,18 @@
     fbq('init', '2180655539030241');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2180655539030241&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
         
         :root {
             --primary: #7c2a90;
-            --primary-dark: #572066;
-            --secondary: #3e1b47;
             --accent: #ff9d00;
             --light: #f8f3ff;
             --dark: #1e0a29;
             --gradient: linear-gradient(135deg, #7c2a90, #2a1b47);
+            --gold: #ffd700;
+            --success: #2ed573;
         }
         
         * {
@@ -47,56 +42,32 @@
             background-color: var(--dark);
             color: var(--light);
             line-height: 1.6;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(124, 42, 144, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 85% 30%, rgba(76, 0, 112, 0.15) 0%, transparent 30%),
-                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48ZmlsdGVyIGlkPSJub2lzZSIgeD0iMCIgeT0iMCI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48ZmVCbGVuZCBtb2RlPSJzY3JlZW4iLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsdGVyPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==');
-            background-attachment: fixed;
-            position: relative;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
             padding: 20px;
         }
         
+        .success-header {
+            background: linear-gradient(45deg, var(--success), #7bed9f);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(46, 213, 115, 0.3);
+        }
+        
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             width: 100%;
             margin: 0 auto;
-            position: relative;
         }
         
         .card {
             background: rgba(30, 10, 41, 0.85);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
-                        0 0 15px rgba(124, 42, 144, 0.3), 
-                        0 0 30px rgba(76, 0, 112, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             padding: 40px;
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(124, 42, 144, 0.3);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            animation: card-glow 6s infinite alternate;
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient);
-            z-index: 2;
-        }
-        
-        @keyframes card-glow {
-            0% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(124, 42, 144, 0.3), 0 0 30px rgba(76, 0, 112, 0.2); }
-            100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(155, 59, 180, 0.4), 0 0 40px rgba(124, 0, 186, 0.25); }
         }
         
         h1, h2, h3, h4 {
@@ -104,450 +75,441 @@
             font-weight: 700;
             color: var(--light);
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             background: linear-gradient(to right, var(--accent), #f8f3ff, #b476cc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-top: 0;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            animation: title-glow 3s infinite alternate;
-        }
-        
-        @keyframes title-glow {
-            0% { filter: drop-shadow(0 0 2px rgba(255, 157, 0, 0.4)); }
-            100% { filter: drop-shadow(0 0 8px rgba(255, 157, 0, 0.7)); }
-        }
-        
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: rgba(248, 243, 255, 0.9);
+            background-clip: text;
         }
         
         .highlight {
             color: var(--accent);
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .mystic-quote {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             text-align: center;
-            margin: 20px auto;
-            color: rgba(248, 243, 255, 0.7);
-            position: relative;
-            padding: 0 30px;
-        }
-        
-        .mystic-quote::before,
-        .mystic-quote::after {
-            content: '"';
-            position: absolute;
-            font-size: 2rem;
-            color: var(--accent);
-            opacity: 0.5;
-        }
-        
-        .mystic-quote::before {
-            left: 0;
-            top: -10px;
-        }
-        
-        .mystic-quote::after {
-            right: 0;
-            bottom: -10px;
-        }
-        
-        .btn {
-            display: block;
-            width: 100%;
-            max-width: 300px;
-            margin: 30px auto 0;
-            padding: 16px 30px;
-            background: var(--gradient);
-            color: var(--light);
-            border: none;
-            border-radius: 50px;
+            margin: 25px auto;
+            color: rgba(248, 243, 255, 0.8);
             font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(124, 42, 144, 0.3);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            text-decoration: none;
-            z-index: 1;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(155, 59, 180, 0.5);
-            color: white;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
         }
         
         .selected-tarot-cards {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
+            gap: 20px;
+            margin: 40px 0;
             flex-wrap: wrap;
+            padding: 30px;
+            background: rgba(30, 10, 41, 0.6);
+            border-radius: 15px;
+            border: 2px solid var(--accent);
         }
         
         .selected-card {
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .selected-card:hover {
-            transform: translateY(-5px);
+            max-width: 180px;
         }
         
         .selected-card img {
-            width: 100px;
+            width: 140px;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--accent);
+        }
+        
+        .selected-card h4 {
+            color: var(--accent);
+            margin: 15px 0 5px;
+            font-size: 1.1rem;
         }
         
         .revelation-section {
-            background: rgba(30, 10, 41, 0.6);
-            border-radius: 10px;
-            padding: 25px;
-            margin: 25px 0;
-            border-left: 4px solid var(--accent);
-            position: relative;
+            background: rgba(30, 10, 41, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .revelation-section::before {
-            content: '✨';
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            font-size: 1.5rem;
+        .revelation-section h3 {
             color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
         }
         
         .card-interpretation {
-            background: rgba(62, 27, 71, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 1px solid rgba(124, 42, 144, 0.2);
+            background: linear-gradient(135deg, rgba(124, 42, 144, 0.2), rgba(255, 157, 0, 0.1));
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid rgba(124, 42, 144, 0.3);
         }
         
-        .step {
-            display: none;
-            animation: fadeIn 0.8s ease forwards;
+        .card-interpretation h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            text-align: left;
         }
         
-        .step.active {
-            display: block;
+        .synthesis-section {
+            background: linear-gradient(135deg, rgba(255, 157, 0, 0.15), rgba(124, 42, 144, 0.15));
+            border: 3px solid var(--accent);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .synthesis-section h3 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        
+        .practical-guidance {
+            background: rgba(46, 213, 115, 0.1);
+            border: 2px solid var(--success);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .practical-guidance h3 {
+            color: var(--success);
+            margin-bottom: 20px;
+        }
+        
+        .practical-guidance ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .practical-guidance li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        
+        .practical-guidance li::before {
+            content: '🌟';
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+        
+        .final-message {
+            background: var(--gradient);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(124, 42, 144, 0.4);
+        }
+        
+        .final-message h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            background: var(--gradient);
+            color: var(--light);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, var(--success), #7bed9f);
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+        
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(124, 42, 144, 0.3);
+            border-top: 4px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 30px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            color: var(--light);
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 10px 0;
         }
         
         .gratitude-message {
             text-align: center;
             background: rgba(124, 42, 144, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            border: 1px solid rgba(124, 42, 144, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 2px solid rgba(124, 42, 144, 0.3);
         }
         
         .cosmic-blessing {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             text-align: center;
             color: var(--accent);
-            margin: 30px 0;
+            margin: 40px 0;
             font-style: italic;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .card {
+                padding: 25px 15px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .selected-card img {
+                width: 100px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">🔮 Preparando sua leitura personalizada...</div>
+        <div class="loading-text">✨ Sincronizando com suas energias...</div>
+        <div class="loading-text">🌟 Sua revelação está quase pronta!</div>
+    </div>
+
     <div class="container">
+        <div class="success-header">
+            <h2 style="margin: 0; font-size: 1.3rem;">✅ PAGAMENTO CONFIRMADO - Sua Leitura Foi Liberada!</h2>
+        </div>
+
         <div class="card">
-            <!-- Personalized Reading Screen (appears after payment approved) -->
-            <div class="step active" id="reading-result">
-                <h1>🔮 Your Personalized Reading</h1>
-                
-                <p>Dear <span id="user-name" class="highlight">Seeker</span>,</p>
-                
-                <p class="mystic-quote">The universe conspired to bring you here at this exact moment. It was no coincidence.</p>
-                
-                <div id="selected-cards-display">
-                    <!-- Selected cards will be displayed here -->
-                </div>
-                
-                <div id="reading-content">
-                    <!-- Reading content will be inserted here dynamically -->
-                </div>
-                
-                <div class="gratitude-message">
-                    <h3>🙏 A Special Message</h3>
-                    <p>Remember: you have the power to transform your life. The cards merely illuminate the path that already exists within you.</p>
-                    <p>Trust your intuition and allow this reading to be a guide on your journey.</p>
-                </div>
-                
-                <div class="cosmic-blessing">
-                    ✨ May light and spiritual protection always be with you ✨
-                </div>
-                
-                <p style="text-align: center; margin-top: 30px;">
-                    <strong>With much love and light,</strong><br>
-                    <span class="highlight">Mystic Tarot</span>
+            <div>
+                <h1>🔮 Sua Leitura Personalizada</h1>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">
+                    Querido(a) <span id="user-name" class="highlight">Consulente</span>,
                 </p>
-                
-                <a href="#" class="btn" id="new-reading-btn">Get New Reading</a>
+                <p class="mystic-quote">O universo conspirou para trazer você até aqui neste momento exato. Cada palavra desta leitura foi canalizada especificamente para sua energia única.</p>
+            </div>
+            
+            <div id="selected-cards-display"></div>
+            
+            <div id="reading-content"></div>
+            
+            <div class="gratitude-message">
+                <h3>🙏 Uma Mensagem Especial Para Você</h3>
+                <p>Você teve a coragem de buscar respostas e se abrir para a sabedoria universal. Isso demonstra uma alma em evolução constante.</p>
+                <p>Lembre-se: você tem o poder de co-criar sua realidade. As cartas apenas iluminam o caminho que já existe dentro de você.</p>
+            </div>
+            
+            <div class="cosmic-blessing">
+                ✨ Que a luz e a proteção espiritual estejam sempre com você ✨
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.1rem;"><strong>Com muito amor e luz,</strong></p>
+                <p style="font-size: 1.2rem; margin: 10px 0;"><span class="highlight">Equipe Revelação Tarot</span> 🔮</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn" id="new-reading-btn">🔄 Nova Leitura</a>
+                <a href="#" class="btn btn-secondary" id="share-btn">📱 Compartilhar</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Tarot cards data
         const tarotDeck = [
-            { id: 1, name: "The Fool", image: "https://www.trustedtarot.com/img/cards/the-fool.png" },
-            { id: 2, name: "The Magician", image: "https://www.trustedtarot.com/img/cards/the-magician.png" },
-            { id: 3, name: "The High Priestess", image: "https://www.trustedtarot.com/img/cards/the-high-priestess.png" },
-            { id: 4, name: "The Empress", image: "https://www.trustedtarot.com/img/cards/the-empress.png" },
-            { id: 5, name: "The Emperor", image: "https://www.trustedtarot.com/img/cards/the-emperor.png" },
-            { id: 6, name: "The Hierophant", image: "https://www.trustedtarot.com/img/cards/the-hierophant.png" },
-            { id: 7, name: "The Lovers", image: "https://www.trustedtarot.com/img/cards/the-lovers.png" },
-            { id: 8, name: "The Chariot", image: "https://www.trustedtarot.com/img/cards/the-chariot.png" },
-            { id: 9, name: "Strength", image: "https://www.trustedtarot.com/img/cards/strength.png" },
-            { id: 10, name: "The Hermit", image: "https://www.trustedtarot.com/img/cards/the-hermit.png" },
-            { id: 11, name: "Wheel of Fortune", image: "https://www.trustedtarot.com/img/cards/wheel-of-fortune.png" },
-            { id: 12, name: "Justice", image: "https://www.trustedtarot.com/img/cards/justice.png" },
-            { id: 13, name: "The Hanged Man", image: "https://www.trustedtarot.com/img/cards/the-hanged-man.png" },
-            { id: 14, name: "Death", image: "https://www.trustedtarot.com/img/cards/death.png" },
-            { id: 15, name: "Temperance", image: "https://www.trustedtarot.com/img/cards/temperance.png" },
-            { id: 16, name: "The Devil", image: "https://www.trustedtarot.com/img/cards/the-devil.png" },
-            { id: 17, name: "The Tower", image: "https://www.trustedtarot.com/img/cards/the-tower.png" },
-            { id: 18, name: "The Star", image: "https://www.trustedtarot.com/img/cards/the-star.png" },
-            { id: 19, name: "The Moon", image: "https://www.trustedtarot.com/img/cards/the-moon.png" },
-            { id: 20, name: "The Sun", image: "https://www.trustedtarot.com/img/cards/the-sun.png" },
-            { id: 21, name: "Judgement", image: "https://www.trustedtarot.com/img/cards/judgement.png" },
-            { id: 22, name: "The World", image: "https://www.trustedtarot.com/img/cards/the-world.png" }
+            { id: 1, name: "O Louco", image: "https://www.trustedtarot.com/img/cards/the-fool.png" },
+            { id: 2, name: "O Mago", image: "https://www.trustedtarot.com/img/cards/the-magician.png" },
+            { id: 3, name: "A Sacerdotisa", image: "https://www.trustedtarot.com/img/cards/the-high-priestess.png" },
+            { id: 4, name: "A Imperatriz", image: "https://www.trustedtarot.com/img/cards/the-empress.png" },
+            { id: 5, name: "O Imperador", image: "https://www.trustedtarot.com/img/cards/the-emperor.png" },
+            { id: 6, name: "O Hierofante", image: "https://www.trustedtarot.com/img/cards/the-hierophant.png" },
+            { id: 7, name: "Os Enamorados", image: "https://www.trustedtarot.com/img/cards/the-lovers.png" },
+            { id: 8, name: "O Carro", image: "https://www.trustedtarot.com/img/cards/the-chariot.png" },
+            { id: 9, name: "A Força", image: "https://www.trustedtarot.com/img/cards/strength.png" },
+            { id: 10, name: "O Eremita", image: "https://www.trustedtarot.com/img/cards/the-hermit.png" },
+            { id: 11, name: "A Roda da Fortuna", image: "https://www.trustedtarot.com/img/cards/wheel-of-fortune.png" },
+            { id: 12, name: "A Justiça", image: "https://www.trustedtarot.com/img/cards/justice.png" },
+            { id: 13, name: "O Enforcado", image: "https://www.trustedtarot.com/img/cards/the-hanged-man.png" },
+            { id: 14, name: "A Morte", image: "https://www.trustedtarot.com/img/cards/death.png" },
+            { id: 15, name: "A Temperança", image: "https://www.trustedtarot.com/img/cards/temperance.png" },
+            { id: 16, name: "O Diabo", image: "https://www.trustedtarot.com/img/cards/the-devil.png" },
+            { id: 17, name: "A Torre", image: "https://www.trustedtarot.com/img/cards/the-tower.png" },
+            { id: 18, name: "A Estrela", image: "https://www.trustedtarot.com/img/cards/the-star.png" },
+            { id: 19, name: "A Lua", image: "https://www.trustedtarot.com/img/cards/the-moon.png" },
+            { id: 20, name: "O Sol", image: "https://www.trustedtarot.com/img/cards/the-sun.png" },
+            { id: 21, name: "O Julgamento", image: "https://www.trustedtarot.com/img/cards/judgement.png" },
+            { id: 22, name: "O Mundo", image: "https://www.trustedtarot.com/img/cards/the-world.png" }
         ];
 
-        // Function to get card by ID
         function getCardById(id) {
             return tarotDeck.find(card => card.id == id);
         }
 
-        // Personalized readings based on focus (English version)
         const themeReadings = {
-            'love': {
-                title: 'Heart Revelations - Love and Relationships',
-                intro: (name) => `${name}, the energies of love are in deep transformation around you. What you're about to discover will forever change your perspective on relationships.`,
-                cardMeanings: {
-                    1: "Your soul is ready for a new beginning in love. Past cycles have completed and renewed energy is approaching your life.",
-                    2: "You possess special magnetism that attracts kindred souls. Your capacity to love deeply is a rare and precious gift.",
-                    3: "Your instincts about people are extraordinarily accurate. Trust your intuition more when it comes to relationships.",
-                    4: "Strong maternal/paternal energy flows through you, creating nurturing and lasting relationships.",
-                    5: "You seek emotional stability and are ready for a serious and lasting commitment.",
-                    6: "Deep spiritual connections mark your relationships. You attract people who elevate your vibration.",
-                    7: "An important decision about love is approaching. The choices you make in the next 60 days will define your romantic destiny.",
-                    8: "You have the strength to overcome any obstacle in love. Current conflicts will resolve in your favor.",
-                    9: "Your patience and determination in love will be rewarded. A situation that seems lost can turn around.",
-                    10: "A period of love introspection is coming to an end. You're ready to open up again.",
-                    11: "A positive turnaround in love is coming. Destiny conspires to unite you with the right person.",
-                    12: "Emotional justice will be done. If someone hurt you, the universe will bring balance back to your life.",
-                    13: "A sacrifice you made in the past for love will be rewarded unexpectedly.",
-                    14: "A phase of your love life is ending to make way for something infinitely better.",
-                    15: "Balance and harmony will mark your next relationships. You will find your complementary half.",
-                    16: "Destructive patterns in relationships will be broken. You will free yourself from toxic cycles.",
-                    17: "A revelation about a relationship will change everything. Prepare for radical transformation.",
-                    18: "Your dreams about ideal love will manifest. An old hope will be realized.",
-                    19: "Illusions about someone will be dispelled, but this will lead you to the truth you need to see.",
-                    20: "Joy and fulfillment in love are guaranteed. A period of great romantic happiness approaches.",
-                    21: "A past love situation will be resolved definitively. You will have the chance to start over.",
-                    22: "Love completeness will be achieved. You are about to live the relationship of your dreams."
+            love: {
+                title: 'Revelações do Coração - Amor e Relacionamentos',
+                intro: function(name) {
+                    return name + ', as energias do amor estão em profunda transformação ao seu redor. O que você está prestes a descobrir mudará sua perspectiva sobre relacionamentos para sempre.';
                 },
-                finalMessage: "True love is closer than you imagine. Keep your heart open and trust the divine process."
+                cardMeanings: {
+                    1: "Sua alma está pronta para um novo começo amoroso. Os ciclos do passado se completaram e uma energia renovada se aproxima de sua vida.",
+                    2: "Você possui um magnetismo especial que atrai almas afins. Sua capacidade de amar profundamente é um dom raro e precioso.",
+                    3: "Seus instintos sobre pessoas são extraordinariamente precisos. Confie mais em sua intuição quando se trata de relacionamentos.",
+                    4: "Uma energia maternal/paternal forte flui através de você, criando relacionamentos nurturantes e duradouros.",
+                    5: "Você busca estabilidade emocional e está pronto(a) para um compromisso sério e duradouro.",
+                    6: "Conexões espirituais profundas marcam seus relacionamentos. Você atrai pessoas que elevam sua vibração.",
+                    7: "Uma decisão importante sobre amor se aproxima. As escolhas que fizer nos próximos 60 dias definirão seu destino romântico.",
+                    8: "Você tem a força para superar qualquer obstáculo no amor. Conflitos atuais se resolverão a seu favor.",
+                    9: "Sua paciência e determinação no amor serão recompensadas. Uma situação que parece perdida pode se reverter.",
+                    10: "Um período de introspecção amorosa está chegando ao fim. Você está pronto(a) para se abrir novamente.",
+                    11: "Uma reviravolta positiva no amor está chegando. O destino conspira para unir você à pessoa certa.",
+                    12: "Justiça emocional será feita. Se alguém te magoou, o universo trará o equilíbrio de volta para sua vida.",
+                    13: "Um sacrifício que você fez no passado por amor será recompensado de forma inesperada.",
+                    14: "Uma fase da sua vida amorosa está terminando para dar lugar a algo infinitamente melhor.",
+                    15: "Equilíbrio e harmonia marcarão seus próximos relacionamentos. Você encontrará sua metade complementar.",
+                    16: "Padrões destrutivos em relacionamentos serão quebrados. Você se libertará de ciclos tóxicos.",
+                    17: "Uma revelação sobre um relacionamento mudará tudo. Prepare-se para uma transformação radical.",
+                    18: "Seus sonhos sobre o amor ideal se manifestarão. Uma esperança antiga será realizada.",
+                    19: "Ilusões sobre alguém serão desfeitas, mas isso o(a) levará à verdade que você precisa ver.",
+                    20: "Alegria e realização no amor estão garantidas. Um período de grande felicidade romântica se aproxima.",
+                    21: "Uma situação amorosa do passado será resolvida definitivamente. Você terá a chance de recomeçar.",
+                    22: "Completude amorosa será alcançada. Você está prestes a viver o relacionamento dos seus sonhos."
+                },
+                finalMessage: "O amor verdadeiro está mais próximo do que você imagina. Mantenha seu coração aberto e confie no processo divino."
             },
-            'career': {
-                title: 'Paths of Prosperity - Career and Abundance',
-                intro: (name) => `${name}, the doors of prosperity are opening for you. Your professional journey is about to take an extraordinary direction.`,
-                cardMeanings: {
-                    1: "A new professional adventure is beginning. Courage and boldness will lead you to success.",
-                    2: "You have all the necessary tools to manifest your professional goals. It's time to act.",
-                    3: "Your business intuition is exceptional. Trust your instincts to make important decisions.",
-                    4: "Abundance and creativity flow through you. Creative projects will bring financial return.",
-                    5: "Leadership and authority mark your professional destiny. A position of power approaches.",
-                    6: "Spiritual mentors are guiding your career. Follow the advice of experienced people.",
-                    7: "An important partnership will change the course of your career. Collaborations will bring prosperity.",
-                    8: "Determination and focus will take you to the top. Obstacles will be easily overcome.",
-                    9: "Your perseverance will be rewarded. Stay firm in your goals, success is near.",
-                    10: "A period of professional reflection ends. Clarity about your purpose will come soon.",
-                    11: "A golden opportunity will turn the wheel of fortune in your favor. Be prepared.",
-                    12: "Fair recognition for your work will finally arrive. Your dedication will be valued.",
-                    13: "A change in perspective about money will transform your financial reality.",
-                    14: "A professional phase ends to make way for something much more lucrative and satisfying.",
-                    15: "Balance between personal and professional life will be achieved. Success without sacrificing happiness.",
-                    16: "You will free yourself from limiting patterns about money. Abundance will flow naturally.",
-                    17: "A radical career change will bring surprising results. Embrace the transformation.",
-                    18: "Your highest professional dreams will manifest. An old aspiration will be realized.",
-                    19: "Professional confusions or misunderstandings will be clarified. Truth will prevail.",
-                    20: "Brilliant success and public recognition will mark this phase of your career.",
-                    21: "A past professional decision will be redeemed. You will have a golden second chance.",
-                    22: "Complete career fulfillment is guaranteed. You will reach the peak of your profession."
+            career: {
+                title: 'Caminhos da Prosperidade - Carreira e Abundância',
+                intro: function(name) {
+                    return name + ', as portas da prosperidade estão se abrindo para você. Sua jornada profissional está prestes a tomar uma direção extraordinária.';
                 },
-                finalMessage: "Your prosperity is inevitable. Keep trusting your potential and the universe will multiply your achievements."
+                cardMeanings: {
+                    1: "Uma nova aventura profissional está começando. Coragem e ousadia levarão você ao sucesso.",
+                    2: "Você tem todas as ferramentas necessárias para manifestar seus objetivos profissionais. É hora de agir.",
+                    3: "Sua intuição nos negócios é excepcional. Confie em seus instintos para tomar decisões importantes.",
+                    4: "Abundância e criatividade fluem através de você. Projetos criativos trarão retorno financeiro.",
+                    5: "Liderança e autoridade marcam seu destino profissional. Uma posição de poder se aproxima.",
+                    6: "Mentores espirituais estão guiando sua carreira. Siga os conselhos de pessoas experientes.",
+                    7: "Uma parceria importante mudará o rumo de sua carreira. Colaborações trarão prosperidade.",
+                    8: "Determinação e foco levarão você ao topo. Obstáculos serão superados com facilidade.",
+                    9: "Sua perseverança será recompensada. Continue firme em seus objetivos, o sucesso está próximo.",
+                    10: "Um período de reflexão profissional se encerra. Clareza sobre seu propósito chegará em breve.",
+                    11: "Uma oportunidade de ouro girará a roda da fortuna a seu favor. Esteja preparado(a).",
+                    12: "Reconhecimento justo por seu trabalho finalmente chegará. Sua dedicação será valorizada.",
+                    13: "Uma mudança de perspectiva sobre dinheiro transformará sua realidade financeira.",
+                    14: "Uma fase profissional se encerra para dar lugar a algo muito mais lucrativo e satisfatório.",
+                    15: "Equilíbrio entre vida pessoal e profissional será alcançado. Sucesso sem sacrificar a felicidade.",
+                    16: "Você se libertará de padrões limitantes sobre dinheiro. Abundância fluirá naturalmente.",
+                    17: "Uma mudança radical na carreira trará resultados surpreendentes. Embrace a transformação.",
+                    18: "Seus sonhos profissionais mais altos se manifestarão. Uma aspiração antiga se realizará.",
+                    19: "Confusões ou mal-entendidos profissionais serão esclarecidos. A verdade prevalecerá.",
+                    20: "Sucesso brilhante e reconhecimento público marcarão esta fase de sua carreira.",
+                    21: "Uma decisão profissional do passado será redimida. Você terá uma segunda chance de ouro.",
+                    22: "Realização completa na carreira está garantida. Você alcançará o ápice de sua profissão."
+                },
+                finalMessage: "Sua prosperidade é inevitável. Continue confiando em seu potencial e o universo multiplicará suas conquistas."
             },
-            'spiritual': {
-                title: 'Soul Awakening - Spiritual Journey',
-                intro: (name) => `${name}, your soul is undergoing a deep awakening. The revelations you receive will illuminate your spiritual path forever.`,
-                cardMeanings: {
-                    1: "You are beginning a transformative spiritual journey. Courage to explore the unknown interior.",
-                    2: "Your psychic and intuitive gifts are manifesting. You have access to higher wisdom.",
-                    3: "Mystical secrets will be revealed to you. Your connection with the divine feminine is strengthening.",
-                    4: "Spiritual fertility marks this phase. Your spiritual projects will flourish abundantly.",
-                    5: "Structure and spiritual discipline are necessary. Create sacred routines for your growth.",
-                    6: "Traditional spiritual teachings resonate with your soul. Seek ancestral wisdom.",
-                    7: "An important spiritual choice approaches. Your divine destiny depends on this decision.",
-                    8: "Spiritual determination will lead you to enlightenment. Continue in your quest for truth.",
-                    9: "Inner strength and spiritual courage overcome any adversity. You are more powerful than you imagine.",
-                    10: "Spiritual isolation has brought wisdom. Now it's time to share your insights with the world.",
-                    11: "A spiritual turnaround will change your perception of reality. Prepare for consciousness expansion.",
-                    12: "Karmic balance will be restored. Your past actions will bring spiritual rewards.",
-                    13: "Past spiritual sacrifices will be honored. A new divine perspective emerges.",
-                    14: "A spiritual death will give way to rebirth. Deep consciousness transformation.",
-                    15: "Moderation and spiritual balance bring inner peace. Harmony between all aspects of life.",
-                    16: "Liberation from limiting spiritual patterns. You free yourself from beliefs that no longer serve.",
-                    17: "A spiritual revelation will change everything. Prepare for radical soul transformation.",
-                    18: "Spiritual hopes will be realized. Your highest dreams will manifest.",
-                    19: "Spiritual illusions will be dispelled. Divine truth will be clearly revealed.",
-                    20: "Enlightenment and spiritual joy mark this phase. You have reached a new consciousness level.",
-                    21: "A spiritual rebirth is happening. You are being called to a greater purpose.",
-                    22: "Complete spiritual realization. You have found your definitive connection with the divine."
+            spiritual: {
+                title: 'Despertar da Alma - Jornada Espiritual',
+                intro: function(name) {
+                    return name + ', sua alma está passando por um despertar profundo. As revelações que você receberá iluminarão seu caminho espiritual para sempre.';
                 },
-                finalMessage: "You are a being of light in constant evolution. Trust your spiritual journey - it is perfectly aligned with your divine purpose."
-            },
-            'health': {
-                title: 'Healing and Renewal - Integral Health',
-                intro: (name) => `${name}, powerful healing energies are flowing in your direction. Your journey of physical, mental and spiritual renewal is beginning.`,
                 cardMeanings: {
-                    1: "A new cycle of health and vitality is beginning. Courage to make necessary changes.",
-                    2: "You have the power to manifest your own healing. Your mind is your transformation tool.",
-                    3: "Your health intuition is sharp. Trust your instincts about what your body needs.",
-                    4: "Nutritive and regenerative energy flows through you. Loving self-care brings results.",
-                    5: "Discipline and structure in your health habits will bring lasting results.",
-                    6: "Traditional or alternative healing methods resonate with you. Seek holistic wisdom.",
-                    7: "An important choice about your health approaches. Choose the path that honors your well-being.",
-                    8: "Determination and willpower overcome any health challenge. Victory over adversities.",
-                    9: "Inner resistance and emotional courage strengthen your immune system.",
-                    10: "A period of health introspection ends. Clarity about bodily needs emerges.",
-                    11: "An unexpected positive change in your health is coming. Destiny favors your healing.",
-                    12: "Balance will be restored in your body. Divine justice acts in your recovery.",
-                    13: "Sacrifices made for your health will be rewarded. A new perspective on well-being.",
-                    14: "Old harmful habits die to make way for a regenerative lifestyle.",
-                    15: "Moderation and balance bring perfect health. Harmony between body, mind and spirit.",
-                    16: "Liberation from toxic thought patterns that affected your physical health.",
-                    17: "A revelation about your health will radically change your wellness approach.",
-                    18: "Recovery hopes will be realized. Healing that seemed impossible manifests.",
-                    19: "Confusions about diagnoses or treatments will be clarified. Truth about your health emerges.",
-                    20: "Radiant vitality and abundant energy mark this new phase of your life.",
-                    21: "Physical and energetic rebirth. You are being renewed at all levels.",
-                    22: "Perfect health and complete well-being. You have achieved the ideal balance of body, mind and soul."
+                    1: "Você está iniciando uma jornada espiritual transformadora. Coragem para explorar o desconhecido interior.",
+                    2: "Seus dons psíquicos e intuitivos estão se manifestando. Você tem acesso a sabedorias superiores.",
+                    3: "Segredos místicos serão revelados a você. Sua conexão com o divino feminino está se fortalecendo.",
+                    4: "Fertilidade espiritual marca esta fase. Seus projetos espirituais florescerão abundantemente.",
+                    5: "Estrutura e disciplina espiritual são necessárias. Crie rotinas sagradas para seu crescimento.",
+                    6: "Ensinamentos espirituais tradicionais ressoam com sua alma. Busque sabedoria ancestral.",
+                    7: "Uma escolha espiritual importante se aproxima. Seu destino divino depende desta decisão.",
+                    8: "Determinação espiritual o(a) levará à iluminação. Continue em sua busca pela verdade.",
+                    9: "Força interior e coragem espiritual superam qualquer adversidade. Você é mais poderoso(a) do que imagina.",
+                    10: "Isolamento espiritual trouxe sabedoria. Agora é hora de compartilhar seus insights com o mundo.",
+                    11: "Uma reviravolta espiritual mudará sua percepção da realidade. Prepare-se para uma expansão consciencial.",
+                    12: "Equilíbrio cármico será restaurado. Suas ações passadas trarão recompensas espirituais.",
+                    13: "Sacrifícios espirituais do passado serão honrados. Uma nova perspectiva divina emerge.",
+                    14: "Uma morte espiritual dará lugar ao renascimento. Transformação profunda da consciência.",
+                    15: "Moderação e equilíbrio espiritual trazem paz interior. Harmonia entre todos os aspectos da vida.",
+                    16: "Libertação de padrões espirituais limitantes. Você se liberta de crenças que não mais servem.",
+                    17: "Uma revelação espiritual mudará tudo. Prepare-se para uma transformação radical da alma.",
+                    18: "Esperanças espirituais se realizarão. Seus sonhos mais elevados se manifestarão.",
+                    19: "Ilusões espirituais serão desfeitas. A verdade divina será revelada claramente.",
+                    20: "Iluminação e alegria espiritual marcam esta fase. Você alcançou um novo nível consciencial.",
+                    21: "Um renascimento espiritual está acontecendo. Você está sendo chamado(a) para um propósito maior.",
+                    22: "Realização espiritual completa. Você encontrou sua conexão definitiva com o divino."
                 },
-                finalMessage: "Your health is a reflection of your spiritual energy. Maintain positive thoughts and loving practices with yourself."
-            },
-            'family': {
-                title: 'Sacred Bonds - Family and Family Relationships',
-                intro: (name) => `${name}, family bonds are channels of healing and transformation. Revelations about your family will illuminate important ancestral patterns.`,
-                cardMeanings: {
-                    1: "A new family cycle is beginning. Courage to break limiting patterns from past generations.",
-                    2: "You have the gift of transforming family dynamics. Your positive influence heals old wounds.",
-                    3: "Family secrets will be revealed. Your intuition about family history is correct.",
-                    4: "Strong maternal/paternal energy flows through you, nurturing and protecting loved ones.",
-                    5: "Family authority and responsibility fall upon you. Wise family leadership is necessary.",
-                    6: "Sacred family traditions must be honored. Seek wisdom in ancestral teachings.",
-                    7: "An important decision will affect the whole family. Choose with love and wisdom.",
-                    8: "Determination to protect family overcomes any obstacle. Family unity strengthens.",
-                    9: "Emotional strength sustains family in difficult times. You are the pillar of support.",
-                    10: "Isolation from family issues brings wisdom. Now it's time to reconnect with love.",
-                    11: "An unexpected change in family dynamics will bring positive results for everyone.",
-                    12: "Family justice will be done. Old conflicts will find balanced resolution.",
-                    13: "Sacrifices made for family will be recognized and honored. New perspective on relationships.",
-                    14: "Dysfunctional family patterns die to make way for healthier relationships.",
-                    15: "Harmony and balance are restored in family. Peace among all members.",
-                    16: "Liberation from toxic family patterns. You break negative cycles from past generations.",
-                    17: "A family revelation will change perception about your history. Radical relationship transformation.",
-                    18: "Hopes of family reconciliation will be realized. Dreams of union manifest.",
-                    19: "Family misunderstandings will be clarified. Truth about old situations emerges.",
-                    20: "Joy and celebration mark family life. Happy moments and shared achievements.",
-                    21: "Rebirth of family relationships. A new phase of love and understanding begins.",
-                    22: "Complete family harmony. All bonds are healed and strengthened by love."
-                },
-                finalMessage: "Family is your first circle of spiritual learning. Love, forgive and heal to transform generations."
+                finalMessage: "Você é um ser de luz em constante evolução. Confie em sua jornada espiritual - ela está perfeitamente alinhada com seu propósito divino."
             }
         };
 
-        // Main function that generates personalized reading
-        function generatePersonalizedReading() {
-            try {
-                // Retrieve saved data from localStorage
-                const savedData = localStorage.getItem('tarotUserChoices');
-                if (!savedData) {
-                    // If no saved data, show generic message
-                    showGenericReading();
-                    return;
-                }
-
-                const userChoices = JSON.parse(savedData);
-                console.log('Retrieved data:', userChoices); // Debug
-
-                // Use 'focus' instead of 'theme' for compatibility with main site
-                const userName = userChoices.name || 'Seeker';
-                const userFocus = userChoices.focus || 'spiritual'; // Change here
-                const selectedCards = userChoices.selectedCards || [];
-
-                console.log('Name:', userName, 'Focus:', userFocus, 'Cards:', selectedCards); // Debug
-
-                // Update user name
-                document.getElementById('user-name').textContent = userName;
-
-                // Show selected cards
-                displaySelectedCards(selectedCards);
-
-                // Generate reading content
-                generateReadingContent(userName, userFocus, selectedCards);
-
-            } catch (error) {
-                console.error('Error generating reading:', error);
-                showGenericReading();
-            }
-        }
-
-        // Function to show selected cards
         function displaySelectedCards(selectedCards) {
             const cardsContainer = document.getElementById('selected-cards-display');
             if (!cardsContainer || !selectedCards.length) return;
 
             let cardsHTML = '<div class="selected-tarot-cards">';
-            cardsHTML += '<h3>Your Chosen Cards</h3>';
+            cardsHTML += '<h3 style="width: 100%; text-align: center; color: var(--accent); margin-bottom: 25px;">🔮 Suas Cartas Sagradas Escolhidas</h3>';
             
-            selectedCards.forEach((card, index) => {
+            selectedCards.forEach(function(card, index) {
                 const cardData = getCardById(card.id);
                 if (cardData) {
-                    cardsHTML += `
-                        <div class="selected-card">
-                            <img src="${cardData.image}" alt="${cardData.name}">
-                            <p style="margin-top: 10px; font-weight: bold; color: var(--accent);">${cardData.name}</p>
-                            <p style="font-size: 0.9rem;">Position ${index + 1}</p>
-                        </div>
-                    `;
+                    cardsHTML += '<div class="selected-card">';
+                    cardsHTML += '<img src="' + cardData.image + '" alt="' + cardData.name + '">';
+                    cardsHTML += '<h4>' + cardData.name + '</h4>';
+                    cardsHTML += '<p>Carta ' + (index + 1) + '</p>';
+                    cardsHTML += '</div>';
                 }
             });
             
@@ -555,222 +517,192 @@
             cardsContainer.innerHTML = cardsHTML;
         }
 
-        // Function to generate complete reading content
-        function generateReadingContent(userName, focus, selectedCards) {
+        function generatePersonalizedSynthesis(userName, userChoices) {
+            let synthesis = '<div class="synthesis-section">';
+            synthesis += '<h3>🌟 Síntese Energética Personalizada Para ' + userName + '</h3>';
+            
+            if (userChoices.qualificacao === 'sim') {
+                synthesis += '<p><strong>' + userName + '</strong>, você veio até aqui porque sua alma estava clamando por orientação urgente. As cartas confirmam que você possui uma sensibilidade espiritual extraordinária.</p>';
+            } else if (userChoices.qualificacao === 'bloqueado') {
+                synthesis += '<p><strong>' + userName + '</strong>, a sensação de estar bloqueado(a) é na verdade sua alma pedindo para você parar de lutar contra sua natureza verdadeira.</p>';
+            } else if (userChoices.qualificacao === 'sinais') {
+                synthesis += '<p><strong>' + userName + '</strong>, os sinais que você tem percebido são reais e confirmam sua conexão especial com planos superiores.</p>';
+            }
+
+            if (userChoices.birthDate) {
+                const birthDate = new Date(userChoices.birthDate);
+                const day = birthDate.getDate();
+                
+                synthesis += '<p>Sua data de nascimento revela padrões numerológicos poderosos: ';
+                
+                if (day <= 10) {
+                    synthesis += 'nascendo no dia ' + day + ', você carrega a energia do novo começo e liderança natural.';
+                } else if (day <= 20) {
+                    synthesis += 'nascendo no dia ' + day + ', você possui uma energia de equilíbrio e cooperação.';
+                } else {
+                    synthesis += 'nascendo no dia ' + day + ', você tem uma conexão especial com a manifestação e realização.';
+                }
+                synthesis += '</p>';
+            }
+
+            synthesis += '<p class="mystic-quote">Quando conectamos suas três cartas escolhidas com sua vibração pessoal, um padrão cósmico emerge: <span class="highlight">você está no início de um ciclo de 7 anos que promete realizações extraordinárias</span>.</p>';
+            synthesis += '</div>';
+            
+            return synthesis;
+        }
+
+        function generatePracticalGuidance(theme) {
+            const guidances = {
+                love: '<div class="practical-guidance"><h3>💫 Ritual de Amor Personalizado</h3><p><strong>Nos próximos 21 dias:</strong></p><ul><li>Ao acordar, diga: "Eu mereço amor verdadeiro"</li><li>Use cores rosa, verde e dourado</li><li>Visualize-se envolvido em luz rosa por 5 minutos antes de dormir</li><li>Seja receptivo a novos encontros sociais</li></ul></div>',
+                
+                career: '<div class="practical-guidance"><h3>💫 Ritual de Prosperidade</h3><p><strong>Nos próximos 30 dias:</strong></p><ul><li>Anote 3 qualidades profissionais suas diariamente</li><li>Use cores dourado, verde e azul marinho</li><li>Organize seu espaço de trabalho</li><li>Invista 30 minutos diários em aprendizado</li></ul></div>',
+                
+                spiritual: '<div class="practical-guidance"><h3>💫 Ritual Espiritual</h3><p><strong>Nos próximos 40 dias:</strong></p><ul><li>Medite 15 minutos diariamente</li><li>Mantenha um diário de sincronicidades</li><li>Conecte-se com a natureza 3x por semana</li><li>Pratique gratidão antes de dormir</li></ul></div>'
+            };
+            
+            return guidances[theme] || guidances.spiritual;
+        }
+
+        function generateReadingContent(userName, userChoices) {
             const readingContainer = document.getElementById('reading-content');
             if (!readingContainer) return;
 
-            // Use focus instead of theme
-            const themeData = themeReadings[focus] || themeReadings.spiritual;
+            const theme = userChoices.tema || 'spiritual';
+            const selectedCards = userChoices.selectedCards || [];
+            const themeData = themeReadings[theme] || themeReadings.spiritual;
             
-            let content = `
-                <div class="revelation-section">
-                    <h3>${themeData.title}</h3>
-                    <p>${themeData.intro(userName)}</p>
-                </div>
-            `;
+            let content = '<div class="revelation-section">';
+            content += '<h3>' + themeData.title + '</h3>';
+            content += '<p>' + themeData.intro(userName) + '</p>';
+            content += '</div>';
 
-            // Interpret each selected card
-            selectedCards.forEach((card, index) => {
+            selectedCards.forEach(function(card, index) {
                 const cardData = getCardById(card.id);
-                const meaning = themeData.cardMeanings[card.id] || `This card brings energies of transformation and growth to your life.`;
+                const meaning = themeData.cardMeanings[card.id] || 'Esta carta traz energias de transformação para sua vida.';
                 
-                content += `
-                    <div class="card-interpretation">
-                        <h4>🔮 ${cardData ? cardData.name : 'Mystic Card'} - Position ${index + 1}</h4>
-                        <p>${meaning}</p>
-                    </div>
-                `;
+                content += '<div class="card-interpretation">';
+                content += '<h4>🔮 ' + (cardData ? cardData.name : 'Carta Mística') + ' - Posição ' + (index + 1) + '</h4>';
+                content += '<p>' + meaning + '</p>';
+                content += '</div>';
             });
 
-            // Add personalized synthesis
-            content += generatePersonalizedSynthesis(userName, focus, selectedCards);
+            content += generatePersonalizedSynthesis(userName, userChoices);
+            content += generatePracticalGuidance(theme);
 
-            // Add final message
-            content += `
-                <div class="revelation-section">
-                    <h3>✨ Final Message from the Cards</h3>
-                    <p>${themeData.finalMessage}</p>
-                    <p class="mystic-quote">Remember: you co-created this reading with the universe. Each word resonates with your current vibration because you were ready to receive these revelations.</p>
-                </div>
-            `;
-
-            // Add practical guidance
-            content += generatePracticalGuidance(focus, selectedCards);
+            content += '<div class="final-message">';
+            content += '<h3>✨ Mensagem Final Para ' + userName + '</h3>';
+            content += '<p>' + themeData.finalMessage + '</p>';
+            content += '<p class="mystic-quote">Você co-criou esta leitura com o universo. Cada palavra ressoa com sua vibração atual.</p>';
+            content += '</div>';
 
             readingContainer.innerHTML = content;
         }
 
-        // Function to generate personalized synthesis
-        function generatePersonalizedSynthesis(userName, focus, selectedCards) {
-            const syntheses = {
-                love: `
-                    <div class="revelation-section">
-                        <h3>💝 Synthesis of Your Love Path</h3>
-                        <p>${userName}, the three cards you chose reveal a clear pattern: you are in a moment of profound love transformation. Your soul is preparing to receive or deepen a love that will be different from anything you've ever experienced.</p>
-                        <p>The universe wants you to know: stop questioning whether you deserve love. You ARE love, and this inner recognition will attract exactly the person who will complement your journey.</p>
-                    </div>
-                `,
-                career: `
-                    <div class="revelation-section">
-                        <h3>💰 Synthesis of Your Professional Path</h3>
-                        <p>${userName}, your cards show that you are on the threshold of significant professional expansion. Talents you consider "normal" are actually unique gifts the market is waiting for.</p>
-                        <p>The message is clear: stop underestimating your value. In the next 6 months, opportunities will arise that will validate everything you've always known about your potential.</p>
-                    </div>
-                `,
-                spiritual: `
-                    <div class="revelation-section">
-                        <h3>🌟 Synthesis of Your Spiritual Awakening</h3>
-                        <p>${userName}, your cards indicate you are undergoing an accelerated spiritual awakening. Experiences that seemed like coincidence are actually signs that you are aligning with your greater purpose.</p>
-                        <p>Trust your intuition more - it is becoming a precise spiritual compass that will guide you in all areas of life.</p>
-                    </div>
-                `,
-                health: `
-                    <div class="revelation-section">
-                        <h3>🌿 Synthesis of Your Healing Journey</h3>
-                        <p>${userName}, your cards reveal that you possess a very powerful natural self-healing capacity. Your body is more attuned to your emotions than you imagine.</p>
-                        <p>The key to your complete health is balancing mind, body and spirit. Practices that nourish your soul will automatically benefit your physical health.</p>
-                    </div>
-                `,
-                family: `
-                    <div class="revelation-section">
-                        <h3>👨‍👩‍👧‍👦 Synthesis of Your Family Bonds</h3>
-                        <p>${userName}, your cards show that you have a special role as a healer of family patterns. Experiences you've lived served to break negative cycles from past generations.</p>
-                        <p>Your family needs your light and wisdom, even if they don't always express it. You are the transformational link they were waiting for.</p>
-                    </div>
-                `
-            };
-
-            return syntheses[focus] || syntheses.spiritual;
-        }
-
-        // Function to generate practical guidance
-        function generatePracticalGuidance(focus, selectedCards) {
-            const guidances = {
-                love: `
-                    <div class="revelation-section">
-                        <h3>💫 Practical Guidance for Love</h3>
-                        <p><strong>For the next 30 days:</strong></p>
-                        <p>• Practice self-love daily - look in the mirror and say one quality about yourself</p>
-                        <p>• Wear colors that favor love: pink, green and gold</p>
-                        <p>• Meditate 5 minutes visualizing your heart radiating pink light</p>
-                        <p>• Be receptive to invitations and new social experiences</p>
-                    </div>
-                `,
-                career: `
-                    <div class="revelation-section">
-                        <h3>💫 Practical Guidance for Prosperity</h3>
-                        <p><strong>For the next 30 days:</strong></p>
-                        <p>• Write down 3 of your professional qualities every day</p>
-                        <p>• Dress in colors that represent abundance: gold, green and navy blue</p>
-                        <p>• Organize your workspace to favor productivity</p>
-                        <p>• Invest in learning related to your natural talents</p>
-                    </div>
-                `,
-                spiritual: `
-                    <div class="revelation-section">
-                        <h3>💫 Practical Guidance for Spiritual Evolution</h3>
-                        <p><strong>For the next 30 days:</strong></p>
-                        <p>• Dedicate 10 minutes daily to silent meditation</p>
-                        <p>• Keep a journal of synchronicities and dreams</p>
-                        <p>• Connect with nature at least 2x per week</p>
-                        <p>• Practice gratitude every night before sleep</p>
-                    </div>
-                `,
-                health: `
-                    <div class="revelation-section">
-                        <h3>💫 Practical Guidance for Integral Health</h3>
-                        <p><strong>For the next 30 days:</strong></p>
-                        <p>• Drink water with healing intention with each sip</p>
-                        <p>• Practice conscious breathing 3x daily</p>
-                        <p>• Consume foods with varied colors to balance chakras</p>
-                        <p>• Sleep 7-8 hours per night for complete regeneration</p>
-                    </div>
-                `,
-                family: `
-                    <div class="revelation-section">
-                        <h3>💫 Practical Guidance for Family Harmony</h3>
-                        <p><strong>For the next 30 days:</strong></p>
-                        <p>• Send love energy to distant family members mentally</p>
-                        <p>• Practice forgiveness through letters you write but don't send</p>
-                        <p>• Keep family photos in visible places with positive energy</p>
-                        <p>• Initiate conversations that strengthen emotional bonds</p>
-                    </div>
-                `
-            };
-
-            return guidances[focus] || guidances.spiritual;
-        }
-
-        // Function to show generic reading if no saved data
         function showGenericReading() {
             const readingContainer = document.getElementById('reading-content');
             const userName = document.getElementById('user-name');
             
-            userName.textContent = 'Seeker';
+            userName.textContent = 'Alma Especial';
             
-            readingContainer.innerHTML = `
-                <div class="revelation-section">
-                    <h3>🔮 Your Spiritual Reading</h3>
-                    <p>Universal energies have aligned to bring a special message for you at this moment.</p>
-                </div>
-                
-                <div class="card-interpretation">
-                    <h4>✨ First Revelation</h4>
-                    <p>You are going through a period of profound transformation. Changes that seemed impossible are manifesting in your life, even if you can't see them completely yet.</p>
-                </div>
-                
-                <div class="card-interpretation">
-                    <h4>💫 Second Revelation</h4>
-                    <p>Your intuition is sharper than ever. Trust the insights that come to you, especially those that arise in moments of silence and contemplation.</p>
-                </div>
-                
-                <div class="card-interpretation">
-                    <h4>🌟 Third Revelation</h4>
-                    <p>An important cycle is completing in your life. What you considered an end is actually the beginning of something much more aligned with your true essence.</p>
-                </div>
-                
-                <div class="revelation-section">
-                    <h3>💝 Final Message</h3>
-                    <p>The universe wants you to know: you are not alone on this journey. Spirit guides and divine energy are conspiring in your favor, preparing the path for your greatest achievements.</p>
-                </div>
-            `;
+            readingContainer.innerHTML = '<div class="revelation-section"><h3>🔮 Sua Leitura Espiritual</h3><p>As energias universais se alinharam para trazer uma mensagem especial para você.</p></div><div class="card-interpretation"><h4>✨ Primeira Revelação</h4><p>Você está passando por um período de transformação profunda. Mudanças importantes estão se manifestando em sua vida.</p></div><div class="card-interpretation"><h4>💫 Segunda Revelação</h4><p>Sua intuição está mais aguçada do que nunca. Confie nos insights que chegam até você.</p></div><div class="card-interpretation"><h4>🌟 Terceira Revelação</h4><p>Um ciclo importante está se completando. O que parecia um fim é na verdade um novo começo.</p></div><div class="final-message"><h3>💝 Mensagem Final</h3><p>Você não está sozinho nesta jornada. Guias espirituais estão conspirando a seu favor.</p></div>';
         }
 
-        // Function to detect if it's payment return
-        function checkPaymentReturn() {
+        function detectPaymentSuccess() {
             const urlParams = new URLSearchParams(window.location.search);
+            const currentUrl = window.location.href.toLowerCase();
             
-            // Check common payment return parameters
-            const isPaymentReturn = urlParams.get('payment') === 'success' || 
-                                  urlParams.get('status') === 'approved' ||
-                                  urlParams.get('checkout') === 'complete' ||
-                                  window.location.hash.includes('success');
-            
-            return isPaymentReturn;
+            return urlParams.get('payment') === 'success' || 
+                   urlParams.get('status') === 'approved' ||
+                   currentUrl.includes('success') ||
+                   currentUrl.includes('aprovado');
         }
 
-        // Button for new reading
-        document.getElementById('new-reading-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Clear saved data
-            localStorage.removeItem('tarotUserChoices');
-            
-            // Redirect to main site
-            window.location.href = 'https://revelacaotarot.online';
-        });
+        function initializeReading() {
+            try {
+                const savedData = localStorage.getItem('tarotUserChoices');
+                
+                if (savedData) {
+                    const userChoices = JSON.parse(savedData);
+                    const userName = userChoices.name || 'Consulente';
+                    const selectedCards = userChoices.selectedCards || [];
 
-        // Initialization when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if it's payment return or if there's saved data
-            if (checkPaymentReturn() || localStorage.getItem('tarotUserChoices')) {
-                generatePersonalizedReading();
-            } else {
-                // If no data and not payment return, show generic reading
+                    document.getElementById('user-name').textContent = userName;
+
+                    if (selectedCards.length > 0) {
+                        displaySelectedCards(selectedCards);
+                    }
+
+                    generateReadingContent(userName, userChoices);
+
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'Purchase', {
+                            content_name: 'Leitura Premium de Tarot',
+                            value: 14.90,
+                            currency: 'BRL'
+                        });
+                    }
+                } else {
+                    showGenericReading();
+                }
+            } catch (error) {
+                console.error('Erro ao gerar leitura:', error);
                 showGenericReading();
             }
+        }
+
+        function hideLoadingScreen() {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                setTimeout(function() {
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(function() {
+                        loadingScreen.style.display = 'none';
+                    }, 1000);
+                }, 3500);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            hideLoadingScreen();
+            
+            if (detectPaymentSuccess() || localStorage.getItem('tarotUserChoices')) {
+                initializeReading();
+            } else {
+                setTimeout(function() {
+                    initializeReading();
+                }, 3500);
+            }
         });
+
+        document.getElementById('new-reading-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('tarotUserChoices');
+            window.location.href = 'index.html';
+        });
+
+        document.getElementById('share-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: '🔮 Minha Leitura de Tarot',
+                    text: 'Acabei de receber uma leitura de tarot incrível!',
+                    url: window.location.href
+                });
+            } else {
+                const text = '🔮 Leitura de tarot personalizada: ' + window.location.origin;
+                
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(function() {
+                        alert('✅ Link copiado!');
+                    });
+                } else {
+                    prompt('Copie o link:', text);
+                }
+            }
+        });
+
+        console.log('🔮 Página carregada com sucesso!');
     </script>
 </body>
 </html>
